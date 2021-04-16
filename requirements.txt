@@ -1,0 +1,4 @@
+# Needed to parse dictionary
+mmcif >= 0.65
+# Using pytest
+pytest

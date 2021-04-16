@@ -1,0 +1,89 @@
+###########################################################################
+#
+# File:  mmcif_pdbx_vrpt-data.dic
+#
+#            mmCIF PDBX_VRPT Core Dictionary Data Section
+#
+###########################################################################
+#
+data_mmcif_pdbx_vrpt-data.dic
+#########################
+## CATEGORY_GROUP_LIST ##
+#########################
+
+     loop_
+    _category_group_list.id
+    _category_group_list.parent_id
+    _category_group_list.description
+##
+              'inclusive_group'   .
+;              The parent category group containing all of the data categories in the macromolecular dictionary.
+;
+              'validation_report_group'  'inclusive_group'
+;              Categories that reflect data from wwPDB validation calculation
+;
+
+####################
+## ITEM_TYPE_LIST ##
+####################
+#
+#
+#  The regular expressions defined here are not compliant
+#  with the POSIX 1003.2 standard as they include the
+#  '\n' and '\t' special characters.  These regular expressions
+#  have been tested using version 0.12 of Richard Stallman's
+#  GNU regular expression library in POSIX mode.
+#
+#
+# For some data items, a standard syntax is assumed. The syntax is
+#   described for each data item in the dictionary, but is summarized here:
+#
+#   Names:     The family name(s) followed by a comma, precedes the first
+#              name(s) or initial(s).
+#
+#   Telephone numbers:
+#              The international code is given in brackets and any extension
+#              number is preceded by 'ext'.
+#
+#   Dates:     In the form yyyy-mm-dd.
+#
+##############################################################################
+
+     loop_
+    _item_type_list.code
+    _item_type_list.primitive_code
+    _item_type_list.construct
+    _item_type_list.detail
+               code      char
+               '[][_,.;:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words ...
+;
+               float     numb
+          '-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)?'
+;              float item types are the subset of numbers that are the floating
+               numbers.
+;
+               int       numb
+               '[+-]?[0-9]+'
+;              int item types are the subset of numbers that are the negative
+               or positive integers.
+;
+               text      char
+               '[][ \n\t()_,.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              text item types / multi-line text ...
+;
+               line      char
+               '[][ \t_(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              char item types / multi-word items ...
+;
+               yyyy-mm-dd  char
+                '[0-9]?[0-9]?[0-9][0-9]-[0-9]?[0-9]-[0-9][0-9]'
+;
+               Standard format for CIF dates.
+;
+               alphanum-csv        char
+               '[A-Za-z0-9]+(,[A-Za-z0-9]+)?'
+;              comma separated alpha numeric codes (single words)  (case sensitive) ...
+;
+
+###  EOF  mmcif_pdbx_vrpt-data.dic
