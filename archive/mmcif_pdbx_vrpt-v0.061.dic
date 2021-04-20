@@ -1,32 +1,173 @@
-###########################################################################
-#
-# File:  mmcif_pdbx_vrpt-def-core.dic
-#
-#                     mmCIF PDBX_VRPT Core Dictionary Definitions
-#
-###########################################################################
-data_mmcif_pdbx_vrpt-def-core.dic
+data_mmcif_pdbx_vrpt.dic
 
-#####################
-# pdbx_vrpt_summary #
-#####################
+_datablock.id           mmcif_pdbx_vrpt.dic
+_datablock.description  "wwPDB Validation Report extension dictionary"
+#
+_dictionary.title         mmcif_pdbx_vrpt.dic
+_dictionary.datablock_id  mmcif_pdbx_vrpt.dic
+_dictionary.version       0.061
+#
+loop_
+_dictionary_history.version
+_dictionary_history.update
+_dictionary_history.revision
+0.060  2021-04-09  "Preliminary translated version"  
+0.061  2021-04-20  
+; Changes (ep):
+  + Cleanup descriptions and types of many categories and attributes
+;
+  
+#
+loop_
+_category_group_list.id
+_category_group_list.parent_id
+_category_group_list.description
+inclusive_group          .                "              The parent category group containing all of the data categories in the macromolecular dictionary."  
+validation_report_group  inclusive_group  "              Categories that reflect data from wwPDB validation calculation"  
+#
+loop_
+_item_type_list.code
+_item_type_list.primitive_code
+_item_type_list.construct
+_item_type_list.detail
+code              char   
+;[][_,.;:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*
+;
+  "              code item types/single words ..."  
+ucode             uchar  
+;[][_,.;:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*
+;
+  "              code item types/single words  (case insensitive) ..."  
+line              char   
+;[][ \t_(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*
+;
+  "              char item types / multi-word items ..."  
+text              char   
+;[][ \n\t()_,.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*
+;
+  "              text item types / multi-line text ..."  
+float             numb   -?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)?  
+;              float item types are the subset of numbers that are the floating
+               numbers.
+;
+  
+int               numb   "[+-]?[0-9]+"  
+;              int item types are the subset of numbers that are the negative
+               or positive integers.
+;
+  
+atcode            char   
+;[][ _(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*
+;
+  "              Character data type for atom names  ..."  
+yyyy-mm-dd:hh:mm  char   "[0-9]?[0-9]?[0-9][0-9]-[0-9]?[0-9](-[0-9]?[0-9])?(:[0-9]?[0-9]:[0-9][0-9])?"  
+;
+               Standard format for CIF dates with optional time stamp.
+;
+  
+yyyy-mm-dd        char   "[0-9]?[0-9]?[0-9][0-9]-[0-9]?[0-9]-[0-9][0-9]"  
+;
+               Standard format for CIF dates.
+;
+  
+alphanum-csv      char   "[A-Za-z0-9]+(,[A-Za-z0-9]+){0,}"  "              comma separated alpha numeric codes (single words)  (case sensitive) ..."  
+#
+loop_
+_item_units_list.code
+_item_units_list.detail
+angstroms          "Angstroms   (metres * 10^(-10)^)"  
+degrees            "degrees (of arc)"  
+angstroms_squared  "Angstroms squared  (metres * 10^(-10)^)^2^"  
+#
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+pdbx_vrpt_asym                             1  pdbx_vrpt_asym:pdbx_vrpt_entity:1                                     .  .  
+pdbx_vrpt_instance_clashes                 1  pdbx_vrpt_instance_clashes:pdbx_vrpt_model_instance:1                 .  .  
+pdbx_vrpt_instance_intra_angle_outliers    1  pdbx_vrpt_instance_intra_angle_outliers:pdbx_vrpt_model_instance:1    .  .  
+pdbx_vrpt_instance_intra_bond_outliers     1  pdbx_vrpt_instance_intra_bond_outliers:pdbx_vrpt_model_instance:1     .  .  
+pdbx_vrpt_instance_intra_plane_outliers    1  pdbx_vrpt_instance_intra_plane_outliers:pdbx_vrpt_model_instance:1    .  .  
+pdbx_vrpt_instance_mogul_bond_outliers     1  pdbx_vrpt_instance_mogul_bond_outliers:pdbx_vrpt_model_instance:1     .  .  
+pdbx_vrpt_instance_mogul_angle_outliers    1  pdbx_vrpt_instance_mogul_angle_outliers:pdbx_vrpt_model_instance:1    .  .  
+pdbx_vrpt_instance_mogul_ring_outliers     1  pdbx_vrpt_instance_mogul_ring_outliers:pdbx_vrpt_model_instance:1     .  .  
+pdbx_vrpt_instance_mogul_torsion_outliers  1  pdbx_vrpt_instance_mogul_torsion_outliers:pdbx_vrpt_model_instance:1  .  .  
+pdbx_vrpt_instance_symm_clashes            1  pdbx_vrpt_instance_symm_clashes:pdbx_vrpt_model_instance:1            .  .  
+pdbx_vrpt_instance_stereo_outliers         1  pdbx_vrpt_instance_stereo_outliers:pdbx_vrpt_model_instance:1         .  .  
+pdbx_vrpt_model_instance                   1  pdbx_vrpt_model_instance:pdbx_vrpt_entity:1                           .  .  
+pdbx_vrpt_model_instance_geometry          1  pdbx_vrpt_model_instance_geometry:pdbx_vrpt_model_instance:1          .  .  
+pdbx_vrpt_model_instance_density           1  pdbx_vrpt_model_instance_density:pdbx_vrpt_model_instance:1           .  .  
+pdbx_vrpt_percentile_conditions            1  pdbx_vrpt_percentile_conditions:pdbx_vrpt_percentile_list:1           .  .  
+pdbx_vrpt_percentile_conditions            2  pdbx_vrpt_percentile_conditions:pdbx_vrpt_percentile_type:2           .  .  
+pdbx_vrpt_percentile_entity_view           1  pdbx_vrpt_percentile_entity_view:pdbx_vrpt_percentile_conditions:1    .  .  
+pdbx_vrpt_percentile_entity_view           2  pdbx_vrpt_percentile_entity_view:pdbx_vrpt_percentile_type:2          .  .  
+pdbx_vrpt_percentile_entity_view           3  pdbx_vrpt_percentile_entity_view:pdbx_vrpt_entity:3                   .  .  
+pdbx_vrpt_em_2d_graph_data                 1  pdbx_vrpt_em_2d_graph_data:pdbx_vrpt_em_2d_graph_info:1               .  .  
+pdbx_vrpt_em_graph_atom_inclusion          1  pdbx_vrpt_em_graph_atom_inclusion:pdbx_vrpt_em_2d_graph_info:1        .  .  
+pdbx_vrpt_em_graph_fsc_curve               1  pdbx_vrpt_em_graph_fsc_curve:pdbx_vrpt_em_2d_graph_info:1             .  .  
+pdbx_vrpt_em_graph_fsc_indicator_curve     1  pdbx_vrpt_em_graph_fsc_indicator_curve:pdbx_vrpt_em_2d_graph_info:1   .  .  
+pdbx_vrpt_summary_entity_geometry          1  pdbx_vrpt_summary_entity_geometry:pdbx_vrpt_entity:1                  .  .  
+pdbx_vrpt_violated_dihedral_restraints     1  pdbx_vrpt_violated_dihedral_restraints:pdbx_vrpt_model_instance:1     .  .  
+pdbx_vrpt_violated_dihedral_restraints     2  pdbx_vrpt_violated_dihedral_restraints:pdbx_vrpt_model_instance:2     .  .  
+pdbx_vrpt_violated_dihedral_restraints     3  pdbx_vrpt_violated_dihedral_restraints:pdbx_vrpt_model_instance:3     .  .  
+pdbx_vrpt_violated_dihedral_restraints     4  pdbx_vrpt_violated_dihedral_restraints:pdbx_vrpt_model_instance:4     .  .  
+pdbx_vrpt_violated_distance_restraints     1  pdbx_vrpt_violated_distance_restraints:pdbx_vrpt_model_instance:1     .  .  
+pdbx_vrpt_violated_distance_restraints     2  pdbx_vrpt_violated_distance_restraints:pdbx_vrpt_model_instance:2     .  .  
+#
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+pdbx_vrpt_asym                             1  "_pdbx_vrpt_asym.entity_id"                               "_pdbx_vrpt_entity.id"                       pdbx_vrpt_entity                 
+pdbx_vrpt_instance_clashes                 1  "_pdbx_vrpt_instance_clashes.instance_id"                 "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_mogul_bond_outliers     1  "_pdbx_vrpt_instance_mogul_bond_outliers.instance_id"     "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_mogul_angle_outliers    1  "_pdbx_vrpt_instance_mogul_angle_outliers.instance_id"    "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_mogul_ring_outliers     1  "_pdbx_vrpt_instance_mogul_ring_outliers.instance_id"     "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_mogul_torsion_outliers  1  "_pdbx_vrpt_instance_mogul_torsion_outliers.instance_id"  "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_intra_angle_outliers    1  "_pdbx_vrpt_instance_intra_angle_outliers.instance_id"    "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_intra_bond_outliers     1  "_pdbx_vrpt_instance_intra_bond_outliers.instance_id"     "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_intra_plane_outliers    1  "_pdbx_vrpt_instance_intra_plane_outliers.instance_id"    "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_stereo_outliers         1  "_pdbx_vrpt_instance_stereo_outliers.instance_id"         "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_instance_symm_clashes            1  "_pdbx_vrpt_instance_symm_clashes.instance_id"            "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_model_instance                   1  "_pdbx_vrpt_model_instance.entity_id"                     "_pdbx_vrpt_entity.id"                       pdbx_vrpt_entity                 
+pdbx_vrpt_model_instance_geometry          1  "_pdbx_vrpt_model_instance_geometry.instance_id"          "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_model_instance_density           1  "_pdbx_vrpt_model_instance_density.instance_id"           "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_percentile_conditions            1  "_pdbx_vrpt_percentile_conditions.percentile_list_id"     "_pdbx_vrpt_percentile_list.id"              pdbx_vrpt_percentile_list        
+pdbx_vrpt_percentile_conditions            2  "_pdbx_vrpt_percentile_conditions.type_id"                "_pdbx_vrpt_percentile_type.id"              pdbx_vrpt_percentile_type        
+pdbx_vrpt_percentile_entity_view           1  "_pdbx_vrpt_percentile_entity_view.conditions_id"         "_pdbx_vrpt_percentile_conditions.id"        pdbx_vrpt_percentile_conditions  
+pdbx_vrpt_percentile_entity_view           2  "_pdbx_vrpt_percentile_entity_view.type_id"               "_pdbx_vrpt_percentile_type.id"              pdbx_vrpt_percentile_type        
+pdbx_vrpt_percentile_entity_view           3  "_pdbx_vrpt_percentile_entity_view.entity_id"             "_pdbx_vrpt_entity.id"                       pdbx_vrpt_entity                 
+pdbx_vrpt_em_2d_graph_data                 1  "_pdbx_vrpt_em_2d_graph_data.graph_data_id"               "_pdbx_vrpt_em_2d_graph_info.graph_data_id"  pdbx_vrpt_em_2d_graph_info       
+pdbx_vrpt_em_graph_atom_inclusion          1  "_pdbx_vrpt_em_graph_atom_inclusion.graph_id"             "_pdbx_vrpt_em_2d_graph_info.graph_id"       pdbx_vrpt_em_2d_graph_info       
+pdbx_vrpt_em_graph_fsc_curve               1  "_pdbx_vrpt_em_graph_fsc_curve.graph_id"                  "_pdbx_vrpt_em_2d_graph_info.graph_id"       pdbx_vrpt_em_2d_graph_info       
+pdbx_vrpt_em_graph_fsc_indicator_curve     1  "_pdbx_vrpt_em_graph_fsc_indicator_curve.graph_id"        "_pdbx_vrpt_em_2d_graph_info.graph_id"       pdbx_vrpt_em_2d_graph_info       
+pdbx_vrpt_summary_entity_geometry          1  "_pdbx_vrpt_summary_entity_geometry.entity_id"            "_pdbx_vrpt_entity.id"                       pdbx_vrpt_entity                 
+pdbx_vrpt_violated_dihedral_restraints     1  "_pdbx_vrpt_violated_dihedral_restraints.instance_id_1"   "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_violated_dihedral_restraints     2  "_pdbx_vrpt_violated_dihedral_restraints.instance_id_2"   "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_violated_dihedral_restraints     3  "_pdbx_vrpt_violated_dihedral_restraints.instance_id_3"   "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_violated_dihedral_restraints     4  "_pdbx_vrpt_violated_dihedral_restraints.instance_id_4"   "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_violated_distance_restraints     1  "_pdbx_vrpt_violated_distance_restraints.instance_id_1"   "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+pdbx_vrpt_violated_distance_restraints     2  "_pdbx_vrpt_violated_distance_restraints.instance_id_2"   "_pdbx_vrpt_model_instance.id"               pdbx_vrpt_model_instance         
+##
 save_pdbx_vrpt_summary
    _category.id              pdbx_vrpt_summary
    _category.description     
 ;
             pdbx_vrpt_summary contains most information that has a single value for the structure analyzed and in the run.
-        
 ;
 
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_summary.entry_id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -38,6 +179,7 @@ save__pdbx_vrpt_summary.entry_id
    _item.mandatory_code  yes
    #
    _item_type.code  code
+   #
 save_
 #
 save__pdbx_vrpt_summary.PDB_deposition_date
@@ -65,6 +207,7 @@ save__pdbx_vrpt_summary.PDB_revision_number
 ;
             The highest number that appears in mmCIF model item _pdbx_audit_revision_history.ordinal.
 ;
+
    #
    _item.name            "_pdbx_vrpt_summary.PDB_revision_number"
    _item.category_id     pdbx_vrpt_summary
@@ -84,6 +227,7 @@ save__pdbx_vrpt_summary.PDB_revision_date
             Date in yyyy-mm-dd format when the structure was last revised by PDB.
             Obtained from the mmCIF model file _pdbx_audit_revision_history.revision_date
 ;
+
    #
    _item.name            "_pdbx_vrpt_summary.PDB_revision_date"
    _item.category_id     pdbx_vrpt_summary
@@ -97,38 +241,12 @@ save__pdbx_vrpt_summary.PDB_revision_date
    #
 save_
 #
-# save__pdbx_vrpt_summary.protein_DNA_RNA_entities
-#    _item_description.description  
-# ;
-#             Comma separated list of the _entity.id's for the molecular entities that are present in the structure
-#             and have _entity_poly.type indicating that they are protein, RNA or DNA: that is in the list
-#             'polypeptide(L)', 'polypeptide(D)', 'polyribonucleotide, 'polydeoxyribonucleotide'  or
-#             'polydeoxyribonucleotide/polyribonucleotide hybrid'.
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_summary.protein_DNA_RNA_entities"
-#    _item.category_id     pdbx_vrpt_summary
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  alphanum-csv
-#    #
-#    _item_aliases.alias_name  "_Entry.protein-DNA-RNA-entities"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-#     loop_
-#     _item_examples.case
-#     _item_examples.detail         1      'single entity'
-#                                   1,2,3  'multiple entities'
-   
-# save_
-#
 save__pdbx_vrpt_summary.EMDB_deposition_date
    _item_description.description  
 ;
             Date in yyyy-mm-dd format when map was deposited to the EMDB.
 ;
+
    #
    _item.name            "_pdbx_vrpt_summary.EMDB_deposition_date"
    _item.category_id     pdbx_vrpt_summary
@@ -183,56 +301,6 @@ save__pdbx_vrpt_summary.attempted_validation_steps
    #
 save_
 #
-# save__pdbx_vrpt_summary.no_ligands_for_mogul
-#    _item_description.description  
-# ;
-#             A flag indicating if there are no ligands in the model for use by mogul.
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_summary.no_ligands_for_mogul"
-#    _item.category_id     pdbx_vrpt_summary
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_Entry.no-ligands-for-mogul"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #   
-# loop_
-#    _item_enumeration.value
-#    _item_enumeration.detail
-#      Y  'there are no ligands for mogul analysis'  
-#      N  .  
-#    #
-# save_
-#
-# save__pdbx_vrpt_summary.no_ligands_for_buster_report
-#    _item_description.description  
-# ;
-#             A flag indicating if there are no ligands in the model used for detailed Buster analysis.
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_summary.no_ligands_for_buster_report"
-#    _item.category_id     pdbx_vrpt_summary
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_Entry.no-ligands-for-buster-report"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #   
-# loop_
-#    _item_enumeration.value
-#    _item_enumeration.detail
-#      Y  'there are no ligands for buster analysis'
-#      N  .  
-#    #
-# save_
-#
 save__pdbx_vrpt_summary.ligands_for_buster_report
    _item_description.description  
 ;
@@ -249,8 +317,8 @@ save__pdbx_vrpt_summary.ligands_for_buster_report
    _item_aliases.alias_name  "_Entry.ligands-for-buster-report"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      Y  .  
@@ -293,7 +361,7 @@ save__pdbx_vrpt_summary.RNA_suiteness
    #
    _item_type.code  float
    #
-   _item_examples.case    0.89
+   _item_examples.case  0.89
    #
    _item_aliases.alias_name  "_Entry.RNAsuiteness"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -301,29 +369,6 @@ save__pdbx_vrpt_summary.RNA_suiteness
    #
 save_
 #
-# save__pdbx_vrpt_summary.no_percentile_property
-#    _item_description.description  
-# ;
-#             Will be set to "true" if no property was found to do percentile analysis on. 
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_summary.no_percentile_property"
-#    _item.category_id     pdbx_vrpt_summary
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_Entry.no-percentile-property"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
-#
-########################
-# pdbx_vrpt_model_list #
-########################
 save_pdbx_vrpt_model_list
    _category.id              pdbx_vrpt_model_list
    _category.description     
@@ -333,14 +378,14 @@ save_pdbx_vrpt_model_list
             contain an ensemble of models (structures). For most NMR entries, the models should be 
             chemically identical - i.e., contain the exact same atoms, and will only differ
             in the cartesian coordinates of constituent atoms. For older NMR entries, and 
-            for non-NMR entries, this is not enforced. 
+            for non-NMR entries, this is not enforced.
 ;
 
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_model_list.PDB_model_num"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
@@ -350,7 +395,7 @@ save_
 save__pdbx_vrpt_model_list.PDB_model_num
    _item_description.description  
 ;
-                    The integer identifier of a Model. 
+                    The integer identifier of a Model.
 ;
 
    #
@@ -392,8 +437,9 @@ save__pdbx_vrpt_model_list.nmrclust_representative
    _item_description.description  
 ;
                     A flag indicating if the given model is also the
-		    representative model of the cluster to which it belongs.  
+		    representative model of the cluster to which it belongs.
 ;
+
    #
    _item.name            "_pdbx_vrpt_model_list.nmrclust_representative"
    _item.category_id     pdbx_vrpt_model_list
@@ -401,11 +447,11 @@ save__pdbx_vrpt_model_list.nmrclust_representative
    #
    _item_type.code  code
    #
-loop_
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
-     True  . 
-     False .  
+     True   .  
+     False  .  
    #
    _item_aliases.alias_name  "_Model.nmrclust_representative"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -413,10 +459,6 @@ loop_
    #
 save_
 #
-#
-############################
-# pdbx_vrpt_model_instance #
-############################
 save_pdbx_vrpt_model_instance
    _category.id              pdbx_vrpt_model_instance
    _category.description     
@@ -428,8 +470,8 @@ save_pdbx_vrpt_model_instance
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_model_instance.id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
@@ -452,6 +494,7 @@ save__pdbx_vrpt_model_instance.auth_asym_id
 ;
             The auth_asym_id identifier for the residue is the same as in the model mmCIF item _atom_site.auth_asym_id.
 ;
+
    #
    _item.name            "_pdbx_vrpt_model_instance.auth_asym_id"
    _item.category_id     pdbx_vrpt_model_instance
@@ -459,7 +502,7 @@ save__pdbx_vrpt_model_instance.auth_asym_id
    #
    _item_type.code  code
    #
-   _item_examples.case       A
+   _item_examples.case  A
    #
    _item_aliases.alias_name  "_ModelledSubgroup.chain"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -481,8 +524,8 @@ save__pdbx_vrpt_model_instance.auth_seq_id
    #
    _item_type.code  int
    #
-   _item_examples.case       8
-   #   
+   _item_examples.case  8
+   #
    _item_aliases.alias_name  "_ModelledSubgroup.resnum"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -501,9 +544,9 @@ save__pdbx_vrpt_model_instance.label_comp_id
    _item.category_id     pdbx_vrpt_model_instance
    _item.mandatory_code  no
    #
-   _item_type.code       ucode
+   _item_type.code  ucode
    #
-   _item_examples.case       GLY
+   _item_examples.case  GLY
    #
    _item_aliases.alias_name  "_ModelledSubgroup.resname"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -525,7 +568,7 @@ save__pdbx_vrpt_model_instance.PDB_model_num
    #
    _item_type.code  int
    #
-    _item_examples.case       1
+   _item_examples.case  1
    #
    _item_aliases.alias_name  "_ModelledSubgroup.model"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -538,7 +581,7 @@ save__pdbx_vrpt_model_instance.label_alt_id
 ;
             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
             Normally one character but can be up to 3.  Example label_alt_id="A"
-            Obtained from _atom_site.label_alt_id 
+            Obtained from _atom_site.label_alt_id
 ;
 
    #
@@ -557,7 +600,7 @@ save_
 save__pdbx_vrpt_model_instance.PDB_ins_code
    _item_description.description  
 ;
-            Insertion code for residue from _atom_site.pdbx_PDB_ins_code 
+            Insertion code for residue from _atom_site.pdbx_PDB_ins_code
 ;
 
    #
@@ -600,6 +643,7 @@ save__pdbx_vrpt_model_instance.label_asym_id
 ;
             The _atom_site.label_asym_id label for the residue.  Normally this is the same as the author chain name.
 ;
+
    #
    _item.name            "_pdbx_vrpt_model_instance.label_asym_id"
    _item.category_id     pdbx_vrpt_model_instance
@@ -634,9 +678,7 @@ save__pdbx_vrpt_model_instance.label_seq_id
 save_
 #
 save__pdbx_vrpt_model_instance.count_angle_outliers
-   _item_description.description
-;           Count of number of atoms with angle outliers for this instance
-;
+   _item_description.description  "           Count of number of atoms with angle outliers for this instance"
    #
    _item.name            "_pdbx_vrpt_model_instance.count_angle_outliers"
    _item.category_id     pdbx_vrpt_model_instance
@@ -647,9 +689,7 @@ save__pdbx_vrpt_model_instance.count_angle_outliers
 save_
 #
 save__pdbx_vrpt_model_instance.count_bond_outliers
-   _item_description.description
-;           Count of number of atoms with bond outliers in this instance
-;
+   _item_description.description  "           Count of number of atoms with bond outliers in this instance"
    #
    _item.name            "_pdbx_vrpt_model_instance.count_bond_outliers"
    _item.category_id     pdbx_vrpt_model_instance
@@ -660,9 +700,7 @@ save__pdbx_vrpt_model_instance.count_bond_outliers
 save_
 #
 save__pdbx_vrpt_model_instance.count_symm_clashes
-   _item_description.description
-;           Count of number of symmetry related clashes for this instance.
-;
+   _item_description.description  "           Count of number of symmetry related clashes for this instance."
    #
    _item.name            "_pdbx_vrpt_model_instance.count_symm_clashes"
    _item.category_id     pdbx_vrpt_model_instance
@@ -673,9 +711,7 @@ save__pdbx_vrpt_model_instance.count_symm_clashes
 save_
 #
 save__pdbx_vrpt_model_instance.count_chiral_outliers
-   _item_description.description
-;           Count of number of chiral outliers for instance.
-;
+   _item_description.description  "           Count of number of chiral outliers for instance."
    #
    _item.name            "_pdbx_vrpt_model_instance.count_chiral_outliers"
    _item.category_id     pdbx_vrpt_model_instance
@@ -686,9 +722,7 @@ save__pdbx_vrpt_model_instance.count_chiral_outliers
 save_
 #
 save__pdbx_vrpt_model_instance.count_plane_outliers
-   _item_description.description
-;           Count of number of planar outliers for this instance.
-;
+   _item_description.description  "           Count of number of planar outliers for this instance."
    #
    _item.name            "_pdbx_vrpt_model_instance.count_plane_outliers"
    _item.category_id     pdbx_vrpt_model_instance
@@ -699,10 +733,8 @@ save__pdbx_vrpt_model_instance.count_plane_outliers
 save_
 #
 save__pdbx_vrpt_model_instance.count_mogul_angle_outliers
-   _item_description.description
-;           Count of number of angle outliers as reported by MOGUL for this instance.
-;
-#
+   _item_description.description  "           Count of number of angle outliers as reported by MOGUL for this instance."
+   #
    _item.name            "_pdbx_vrpt_model_instance.count_mogul_angle_outliers"
    _item.category_id     pdbx_vrpt_model_instance
    _item.mandatory_code  no
@@ -712,9 +744,7 @@ save__pdbx_vrpt_model_instance.count_mogul_angle_outliers
 save_
 #
 save__pdbx_vrpt_model_instance.count_mogul_bond_outliers
-   _item_description.description
-;           Count of number of bond outliers as reported by MOGUL for this residue.
-;
+   _item_description.description  "           Count of number of bond outliers as reported by MOGUL for this residue."
    #
    _item.name            "_pdbx_vrpt_model_instance.count_mogul_bond_outliers"
    _item.category_id     pdbx_vrpt_model_instance
@@ -725,9 +755,7 @@ save__pdbx_vrpt_model_instance.count_mogul_bond_outliers
 save_
 #
 save__pdbx_vrpt_model_instance.count_mogul_torsion_outliers
-   _item_description.description
-;           Count of number torsion angle outliers as reported by MOGUL for this instance.
-;
+   _item_description.description  "           Count of number torsion angle outliers as reported by MOGUL for this instance."
    #
    _item.name            "_pdbx_vrpt_model_instance.count_mogul_torsion_outliers"
    _item.category_id     pdbx_vrpt_model_instance
@@ -738,9 +766,7 @@ save__pdbx_vrpt_model_instance.count_mogul_torsion_outliers
 save_
 #
 save__pdbx_vrpt_model_instance.count_mogul_ring_outliers
-   _item_description.description
-;           Count of number of atoms with ring outliers as reported by MOGUL for this instance.
-;
+   _item_description.description  "           Count of number of atoms with ring outliers as reported by MOGUL for this instance."
    #
    _item.name            "_pdbx_vrpt_model_instance.count_mogul_ring_outliers"
    _item.category_id     pdbx_vrpt_model_instance
@@ -751,9 +777,7 @@ save__pdbx_vrpt_model_instance.count_mogul_ring_outliers
 save_
 #
 save__pdbx_vrpt_model_instance.count_clashes
-   _item_description.description
-;           Count of number of atoms a with a pdbx_vrpt_instance_clashes for this instance.
-;
+   _item_description.description  "           Count of number of atoms a with a pdbx_vrpt_instance_clashes for this instance."
    #
    _item.name            "_pdbx_vrpt_model_instance.count_clashes"
    _item.category_id     pdbx_vrpt_model_instance
@@ -764,17 +788,15 @@ save__pdbx_vrpt_model_instance.count_clashes
 save_
 #
 save__pdbx_vrpt_model_instance.ligand_of_interest
-   _item_description.description
-;           A flag to indicate if this instance is a ligand of interest.
-;
+   _item_description.description  "           A flag to indicate if this instance is a ligand of interest."
    #
    _item.name            "_pdbx_vrpt_model_instance.ligand_of_interest"
    _item.category_id     pdbx_vrpt_model_instance
    _item.mandatory_code  no
    #
    _item_type.code  code
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      Y  .  
@@ -782,10 +804,6 @@ loop_
    #
 save_
 #
-#
-############################
-# pdbx_vrpt_cyrange_domain #
-############################
 save_pdbx_vrpt_cyrange_domain
    _category.id              pdbx_vrpt_cyrange_domain
    _category.description     
@@ -799,8 +817,8 @@ save_pdbx_vrpt_cyrange_domain
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_cyrange_domain.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
@@ -808,9 +826,7 @@ loop_
 save_
 #
 save__pdbx_vrpt_cyrange_domain.ordinal
-   _item_description.description
-;           Uniquely identifies each domain.
-;
+   _item_description.description  "           Uniquely identifies each domain."
    #
    _item.name            "_pdbx_vrpt_cyrange_domain.ordinal"
    _item.category_id     pdbx_vrpt_cyrange_domain
@@ -943,7 +959,7 @@ save_
 save__pdbx_vrpt_cyrange_domain.medoid_rmsd
    _item_description.description  
 ;
-            Average RMSD between the medoid model and other members of the ensemble. 
+            Average RMSD between the medoid model and other members of the ensemble.
 ;
 
    #
@@ -979,10 +995,6 @@ save__pdbx_vrpt_cyrange_domain.residue_string
    #
 save_
 #
-
-#####################################
-# pdbx_vrpt_summary_entity_geometry #
-#####################################
 save_pdbx_vrpt_summary_entity_geometry
    _category.id              pdbx_vrpt_summary_entity_geometry
    _category.description     
@@ -993,8 +1005,8 @@ save_pdbx_vrpt_summary_entity_geometry
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_summary_entity_geometry.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
@@ -1075,7 +1087,7 @@ save_
 save__pdbx_vrpt_summary_entity_geometry.auth_asym_id
    _item_description.description  
 ;
-            The _atom_site.auth_asym_id identifier for the instance. 
+            The _atom_site.auth_asym_id identifier for the instance.
 ;
 
    #
@@ -1090,7 +1102,6 @@ save__pdbx_vrpt_summary_entity_geometry.auth_asym_id
    _item_aliases.version     V6.00
    #
 save_
-#
 #
 save__pdbx_vrpt_summary_entity_geometry.angles_RMSZ
    _item_description.description  
@@ -1160,6 +1171,7 @@ save__pdbx_vrpt_summary_entity_geometry.num_angles_RMSZ
             The number of bond angles compared to "standard geometry" made using the MolProbity dangle program.
             Standard geometry parameters are taken from Engh and Huber (2001) and Parkinson et al. (1996).
 ;
+
    #
    _item.name            "_pdbx_vrpt_summary_entity_geometry.num_angles_RMSZ"
    _item.category_id     pdbx_vrpt_summary_entity_geometry
@@ -1192,10 +1204,6 @@ save__pdbx_vrpt_summary_entity_geometry.average_residue_inclusion
    #
 save_
 #
-
-#################################
-# pdbx_vrpt_chemical_shift_list #
-#################################
 save_pdbx_vrpt_chemical_shift_list
    _category.id              pdbx_vrpt_chemical_shift_list
    _category.description     
@@ -1204,16 +1212,15 @@ save_pdbx_vrpt_chemical_shift_list
             A typical reason for containing multiple chemical shift lists would be differing 
             experimental conditions or samples.
 ;
-   #
+
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_chemical_shift_list.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -1438,9 +1445,6 @@ save__pdbx_vrpt_chemical_shift_list.number_of_unparsed_shifts
    #
 save_
 #
-#####################################
-# pdbx_vrpt_unmapped_chemical_shift #
-#####################################
 save_pdbx_vrpt_unmapped_chemical_shift
    _category.id              pdbx_vrpt_unmapped_chemical_shift
    _category.description     
@@ -1456,12 +1460,11 @@ save_pdbx_vrpt_unmapped_chemical_shift
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_unmapped_chemical_shift.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -1482,7 +1485,6 @@ save__pdbx_vrpt_unmapped_chemical_shift.auth_asym_id
             The auth_asym_id identifier for the residue or auth_asym_id obtained from cif item _atom_site.auth_asym_id.
             Currently this is limited to 5 characters. 
             Example: auth_asym_id="A"
-        
 ;
 
    #
@@ -1511,7 +1513,8 @@ save__pdbx_vrpt_unmapped_chemical_shift.rescode
    _item.mandatory_code  no
    #
    _item_type.code  ucode
-   _item_examples.case       GLY
+   #
+   _item_examples.case  GLY
    #
    _item_aliases.alias_name  "_unmapped_chemical_shift.rescode"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -1634,10 +1637,6 @@ save__pdbx_vrpt_unmapped_chemical_shift.diagnostic
    #
 save_
 #
-#
-#####################################
-# pdbx_vrpt_unparsed_chemical_shift #
-#####################################
 save_pdbx_vrpt_unparsed_chemical_shift
    _category.id              pdbx_vrpt_unparsed_chemical_shift
    _category.description     
@@ -1650,12 +1649,11 @@ save_pdbx_vrpt_unparsed_chemical_shift
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_unparsed_chemical_shift.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -1675,6 +1673,7 @@ save__pdbx_vrpt_unparsed_chemical_shift.id
 ;
                     ID of the chemical shift as parsed in the chemical shifts file.
 ;
+
    #
    _item.name            "_pdbx_vrpt_unparsed_chemical_shift.id"
    _item.category_id     pdbx_vrpt_unparsed_chemical_shift
@@ -1721,9 +1720,8 @@ save__pdbx_vrpt_unparsed_chemical_shift.rescode
    #
    _item_type.code  ucode
    #
-  _item_examples.case       GLY
+   _item_examples.case  GLY
    #
-
    _item_aliases.alias_name  "_unparsed_chemical_shift.rescode"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -1811,7 +1809,6 @@ save__pdbx_vrpt_unparsed_chemical_shift.ambiguity
    _item_description.description  
 ;
             Ambiguity of the chemical shift assignment as per NMR-STAR V3.1 dictionary.
-        
 ;
 
    #
@@ -1846,10 +1843,6 @@ save__pdbx_vrpt_unparsed_chemical_shift.diagnostic
    #
 save_
 #
-#
-##################################
-# pdbx_vrpt_missing_nmrstar_tags #
-##################################
 save_pdbx_vrpt_missing_nmrstar_tags
    _category.id              pdbx_vrpt_missing_nmrstar_tags
    _category.description     
@@ -1862,12 +1855,11 @@ save_pdbx_vrpt_missing_nmrstar_tags
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_missing_nmrstar_tags.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -1920,28 +1912,23 @@ save__pdbx_vrpt_missing_nmrstar_tags.nmrstar_tag
    #
 save_
 #
-#
-###############################
-# pdbx_vrpt_random_coil_index #
-###############################
 save_pdbx_vrpt_random_coil_index
    _category.id              pdbx_vrpt_random_coil_index
    _category.description     
 ;
             The Random Coil Index (RCI) is calculated for each residue from the protein sequence 
             and assigned chemical shifts. Via an empirical formula the RCI correlates with disorder propensity
-            of the residue. 
+            of the residue.
 ;
 
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_random_coil_index.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -2034,10 +2021,6 @@ save__pdbx_vrpt_random_coil_index.value
    #
 save_
 #
-#
-####################################
-# pdbx_vrpt_chemical_shift_outlier #
-####################################
 save_pdbx_vrpt_chemical_shift_outlier
    _category.id              pdbx_vrpt_chemical_shift_outlier
    _category.description     
@@ -2049,12 +2032,11 @@ save_pdbx_vrpt_chemical_shift_outlier
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_chemical_shift_outlier.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -2075,7 +2057,6 @@ save__pdbx_vrpt_chemical_shift_outlier.auth_asym_id
             The auth_asym_id identifier for the residue or auth_asym_id obtained from cif item _atom_site.auth_asym_id.
             Currently this is limited to 5 characters. 
             Example: auth_asym_id="A"
-        
 ;
 
    #
@@ -2186,7 +2167,7 @@ save__pdbx_vrpt_chemical_shift_outlier.zscore
    #
    _item_type.code  float
    #
-   _item_examples.case       -2.40
+   _item_examples.case  -2.40
    #
    _item_aliases.alias_name  "_chemical_shift_outlier.zscore"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -2233,9 +2214,6 @@ save__pdbx_vrpt_chemical_shift_outlier.method
    #
 save_
 #
-################################
-# pdbx_vrpt_referencing_offset #
-################################
 save_pdbx_vrpt_referencing_offset
    _category.id              pdbx_vrpt_referencing_offset
    _category.description     
@@ -2247,12 +2225,11 @@ save_pdbx_vrpt_referencing_offset
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_referencing_offset.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -2365,9 +2342,6 @@ save__pdbx_vrpt_referencing_offset.number_of_measurements
    #
 save_
 #
-##############################################
-# pdbx_vrpt_assign_completeness_well_defined #
-##############################################
 save_pdbx_vrpt_assign_completeness_well_defined
    _category.id              pdbx_vrpt_assign_completeness_well_defined
    _category.description     
@@ -2379,12 +2353,11 @@ save_pdbx_vrpt_assign_completeness_well_defined
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_assign_completeness_well_defined.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -2501,10 +2474,6 @@ save__pdbx_vrpt_assign_completeness_well_defined.element
    #
 save_
 #
-#
-#############################################
-# pdbx_vrpt_assign_completeness_full_length #
-#############################################
 save_pdbx_vrpt_assign_completeness_full_length
    _category.id              pdbx_vrpt_assign_completeness_full_length
    _category.description     
@@ -2516,12 +2485,11 @@ save_pdbx_vrpt_assign_completeness_full_length
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_assign_completeness_full_length.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -2638,9 +2606,6 @@ save__pdbx_vrpt_assign_completeness_full_length.element
    #
 save_
 #
-######################
-# pdbx_vrpt_software #
-######################
 save_pdbx_vrpt_software
    _category.id              pdbx_vrpt_software
    _category.description     
@@ -2652,8 +2617,8 @@ save_pdbx_vrpt_software
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_software.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
@@ -2674,7 +2639,7 @@ save_
 save__pdbx_vrpt_software.name
    _item_description.description  
 ;
-                    The name of the program. 
+                    The name of the program.
 ;
 
    #
@@ -2682,7 +2647,7 @@ save__pdbx_vrpt_software.name
    _item.category_id     pdbx_vrpt_software
    _item.mandatory_code  no
    #
-   _item_examples.case       mogul
+   _item_examples.case  mogul
    #
    _item_type.code  text
    #
@@ -2699,7 +2664,7 @@ save__pdbx_vrpt_software.classification
                     The list is in an arbitrary order that can vary.
                     Example: classification="mogul_rmsz_numangles,mogul_angles_rmsz,mogul-torsion-outlier,mogul-angle-outlier,mogul-bond-outlier,mogul_bonds_rmsz,mogul-ring-outlier,mogul_rmsz_numbonds".
                     Note that the cross-referencing is not currently consistent as names can vary for instance
-                    classification list includes "mogul-angle-outlier" but the attribute is "mog-angle-outlier". 
+                    classification list includes "mogul-angle-outlier" but the attribute is "mog-angle-outlier".
 ;
 
    #
@@ -2728,8 +2693,7 @@ save__pdbx_vrpt_software.version
    #
    _item_type.code  text
    #
-   _item_examples.case       "1.7.2 (RC1), CSD as538be (2017)"
-
+   _item_examples.case  "1.7.2 (RC1), CSD as538be (2017)"
    #
    _item_aliases.alias_name  "_program.version"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -2758,18 +2722,13 @@ save__pdbx_vrpt_software.success_y_or_n
    _item_type.code  code
    #
    loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-      Y  .
-      N  .  
-   #
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  .  
+     N  .  
    #
 save_
 #
-
-##########################################
-# pdbx_vrpt_instance_intra_bond_outliers #
-##########################################
 save_pdbx_vrpt_instance_intra_bond_outliers
    _category.id              pdbx_vrpt_instance_intra_bond_outliers
    _category.description     
@@ -2778,25 +2737,23 @@ save_pdbx_vrpt_instance_intra_bond_outliers
             Engh and Huber EH99 parameters, Parkinson et al. parameter set. 
             It involves two atoms. The obs, mean, stdev will all be in Angstroms units.
             Example: <bond-outlier atom0="C" atom1="OXT" mean="1.229" obs="1.327" stdev="0.019" z="5.16"/>
-        
 ;
 
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_intra_bond_outliers.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
    #
-loop_
-    _category_examples.detail
-    _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _category_examples.detail  
 ;
     Example 1 - based on PDB entry 1ivs
 ;
+
+   _category_examples.case    
 ;
     loop_
     _pdbx_vrpt_instance_intra_bond_outliers.ordinal
@@ -2808,9 +2765,10 @@ loop_
     _pdbx_vrpt_instance_intra_bond_outliers.stdev
     _pdbx_vrpt_instance_intra_bond_outliers.Z
     1   1  OP3  P  1.523  1.607  0.012  -7.03  
-    2  76  OP3  P  1.521  1.607  0.012  -7.20  
+    2  76  OP3  P  1.521  1.607  0.012  -7.20
 ;
-#
+
+   #
 save_
 #
 save__pdbx_vrpt_instance_intra_bond_outliers.ordinal
@@ -2837,28 +2795,6 @@ save__pdbx_vrpt_instance_intra_bond_outliers.instance_id
    _item_linked.parent_name  "_pdbx_vrpt_model_instance.id"
    #
 save_
-#
-#
-# save__pdbx_vrpt_instance_intra_bond_outliers.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Obtained from _atom_site.label_alt_id 
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_intra_bond_outliers.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_intra_bond_outliers
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_bond-outlier.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
 #
 save__pdbx_vrpt_instance_intra_bond_outliers.atom_1
    _item_description.description  
@@ -2906,10 +2842,10 @@ save__pdbx_vrpt_instance_intra_bond_outliers.mean
    #
    _item_type.code  float
    #
-   _item_examples.case       1.607
+   _item_examples.case  1.607
    #
-   _item_units.code              angstroms
-   #   
+   _item_units.code  angstroms
+   #
    _item_aliases.alias_name  "_bond-outlier.mean"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -2932,10 +2868,10 @@ save__pdbx_vrpt_instance_intra_bond_outliers.stdev
    #
    _item_type.code  float
    #
-    _item_units.code              angstroms
+   _item_units.code  angstroms
    #
-   _item_examples.case       0.012
-
+   _item_examples.case  0.012
+   #
    _item_aliases.alias_name  "_bond-outlier.stdev"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -2956,7 +2892,7 @@ save__pdbx_vrpt_instance_intra_bond_outliers.obs
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_bond-outlier.obs"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -3001,8 +2937,8 @@ save__pdbx_vrpt_instance_intra_bond_outliers.link
    _item_aliases.alias_name  "_bond-outlier.link"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      Y  .  
@@ -3010,10 +2946,6 @@ loop_
    #
 save_
 #
-#
-###########################################
-# pdbx_vrpt_instance_intra_angle_outliers #
-###########################################
 save_pdbx_vrpt_instance_intra_angle_outliers
    _category.id              pdbx_vrpt_instance_intra_angle_outliers
    _category.description     
@@ -3026,19 +2958,18 @@ save_pdbx_vrpt_instance_intra_angle_outliers
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_intra_angle_outliers.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
    #
-loop_
-   _category_examples.detail
-   _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _category_examples.detail  
 ;
     Example 1 - based on PDB entry 1ivs
 ;
+
+   _category_examples.case    
 ;
     loop_
     _pdbx_vrpt_instance_intra_angle_outliers.ordinal
@@ -3052,9 +2983,10 @@ loop_
     _pdbx_vrpt_instance_intra_angle_outliers.Z
     _pdbx_vrpt_instance_intra_angle_outliers.link
      1    20  N9     "C1'"  "C2'"  120.758  114.000  1.300   5.20  ?     
-     2    37  "C2'"  "C3'"  "O3'"  121.832  113.700  1.600   5.08  ?     
+     2    37  "C2'"  "C3'"  "O3'"  121.832  113.700  1.600   5.08  ?
 ;
-#
+
+   #
 save_
 #
 save__pdbx_vrpt_instance_intra_angle_outliers.ordinal
@@ -3083,7 +3015,7 @@ save__pdbx_vrpt_instance_intra_angle_outliers.mean
    #
    _item_type.code  float
    #
-   _item_units.code              degrees
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_angle-outlier.mean"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -3097,7 +3029,6 @@ save__pdbx_vrpt_instance_intra_angle_outliers.stdev
              The standard deviation for the bond bond angle. Source is standard deviation found
 	     from Engh and Huber EH99 parameters, Parkinson et al. parameter set 
              or Mogul analysis of CSD structures that have a similar local chemistry.
-        
 ;
 
    #
@@ -3107,7 +3038,7 @@ save__pdbx_vrpt_instance_intra_angle_outliers.stdev
    #
    _item_type.code  float
    #
-   _item_units.code              degrees
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_angle-outlier.stdev"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -3128,7 +3059,7 @@ save__pdbx_vrpt_instance_intra_angle_outliers.obs
    #
    _item_type.code  float
    #
-   _item_units.code              degrees
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_angle-outlier.obs"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -3175,16 +3106,10 @@ save__pdbx_vrpt_instance_intra_angle_outliers.link
    _item_enumeration.detail
      Y  .  
      N  .  
-    #   
+   #
    _item_aliases.alias_name  "_angle-outlier.link"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
-   _item_enumeration.value
-   _item_enumeration.detail
-     Y  .  
-     N  .  
    #
 save_
 #
@@ -3247,30 +3172,6 @@ save__pdbx_vrpt_instance_intra_angle_outliers.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_intra_angle_outliers.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Obtained from _atom_site.label_alt_id 
-        
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_intra_angle_outliers.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_intra_angle_outliers
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_angle-outlier.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
-######################################
-# pdbx_vrpt_instance_stereo_outliers #
-######################################
 save_pdbx_vrpt_instance_stereo_outliers
    _category.id              pdbx_vrpt_instance_stereo_outliers
    _category.description     
@@ -3282,18 +3183,16 @@ save_pdbx_vrpt_instance_stereo_outliers
             If the sign of the computed volume is incorrect, the handedness is wrong. 
             If the absolute volume is less than 0.7&#197;3 , the chiral centre has been modelled as a 
             planar moiety which is very likely to be erroneous. Chirality deviations are summarised per chain. 
-        
 ;
 
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_stereo_outliers.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -3332,7 +3231,6 @@ save__pdbx_vrpt_instance_stereo_outliers.problem
 ;
                     The type of chiral problem that the label_atom_id has.
                     either "WRONG HAND" or "PLANAR"
-                
 ;
 
    #
@@ -3345,8 +3243,8 @@ save__pdbx_vrpt_instance_stereo_outliers.problem
    _item_aliases.alias_name  "_chiral-outlier.problem"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      "WRONG HAND"  .  
@@ -3368,55 +3266,30 @@ save__pdbx_vrpt_instance_stereo_outliers.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_stereo_outliers.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Obtained from _atom_site.label_alt_id 
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_stereo_outliers.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_stereo_outliers
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_chiral-outlier.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
-#
-###########################################
-# pdbx_vrpt_instance_intra_plane_outliers #
-###########################################
 save_pdbx_vrpt_instance_intra_plane_outliers
    _category.id              pdbx_vrpt_instance_intra_plane_outliers
    _category.description     
 ;
              Indicates that there is a problem with planarity of group defined in the standard_geometry.cif for amino 
              acids/proteins or nucleic acid.
-             Calculated by the Validation-pack program. 
+             Calculated by the Validation-pack program.
 ;
 
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_intra_plane_outliers.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
    #
-loop_
-   _category_examples.detail
-   _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _category_examples.detail  
 ;
     Example 1 - based on PDB entry 1o08
 ;
+
+   _category_examples.case    
 ;
     loop_
     _pdbx_vrpt_instance_intra_plane_outliers.ordinal
@@ -3427,6 +3300,7 @@ loop_
     1  225  mainchain  -16.25       ?  
     2  225  peptide         ?  -36.57
 ;
+
    #
 save_
 #
@@ -3469,8 +3343,8 @@ save__pdbx_vrpt_instance_intra_plane_outliers.type
    _item_aliases.alias_name  "_plane-outlier.type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      mainchain  .  
@@ -3492,7 +3366,7 @@ save__pdbx_vrpt_instance_intra_plane_outliers.improper
    #
    _item_type.code  float
    #
-   _item_units.code       degrees
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_plane-outlier.improper"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -3504,7 +3378,6 @@ save__pdbx_vrpt_instance_intra_plane_outliers.omega
    _item_description.description  
 ;
                      For a type="peptide" outlier, the omega torsion angle in degrees.
-               
 ;
 
    #
@@ -3514,7 +3387,7 @@ save__pdbx_vrpt_instance_intra_plane_outliers.omega
    #
    _item_type.code  float
    #
-   _item_units.code              degrees
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_plane-outlier.omega"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -3535,9 +3408,8 @@ save__pdbx_vrpt_instance_intra_plane_outliers.plane_rmsd
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
+   _item_units.code  angstroms
    #
-
    _item_aliases.alias_name  "_plane-outlier.planeRMSD"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -3558,31 +3430,6 @@ save__pdbx_vrpt_instance_intra_plane_outliers.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_intra_plane_outliers.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Normally one character but can be up to 3.  Example label_alt_id="A"
-#             Obtained from _atom_site.label_alt_id 
-        
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_intra_plane_outliers.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_intra_plane_outliers
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_plane-outlier.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
-##############################
-# pdbx_vrpt_instance_clashes #
-##############################
 save_pdbx_vrpt_instance_clashes
    _category.id              pdbx_vrpt_instance_clashes
    _category.description     
@@ -3594,19 +3441,18 @@ save_pdbx_vrpt_instance_clashes
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_clashes.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
    #
-loop_
-   _category_examples.detail
-   _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _category_examples.detail  
 ;
     Example 1 - based on PDB entry 1o08
 ;
+
+   _category_examples.case    
 ;
     loop_
     _pdbx_vrpt_instance_clashes.ordinal
@@ -3616,8 +3462,9 @@ loop_
     _pdbx_vrpt_instance_clashes.clashmag
     _pdbx_vrpt_instance_clashes.dist
      1    1  HG3    1  0.83  1.42  
-     2    1  HG3    2  0.61  2.13  
+     2    1  HG3    2  0.61  2.13
 ;
+
    #
 save_
 #
@@ -3656,7 +3503,6 @@ save__pdbx_vrpt_instance_clashes.cid
 ;
                     An identifier that cross references the other label_atom_id in the clash. The two atoms in the clash
                     will have the same unique cid.
-                
 ;
 
    #
@@ -3687,8 +3533,8 @@ save__pdbx_vrpt_instance_clashes.clashmag
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
-   #   
+   _item_units.code  angstroms
+   #
    _item_aliases.alias_name  "_clash.clashmag"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -3708,8 +3554,8 @@ save__pdbx_vrpt_instance_clashes.dist
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
-   #   
+   _item_units.code  angstroms
+   #
    _item_aliases.alias_name  "_clash.dist"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -3730,30 +3576,6 @@ save__pdbx_vrpt_instance_clashes.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_clashes.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Obtained from _atom_site.label_alt_id 
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_clashes.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_clashes
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_clash.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
-#
-##################################
-# pdbx_vrpt_instance_sym_clashes #
-##################################
 save_pdbx_vrpt_instance_symm_clashes
    _category.id              pdbx_vrpt_instance_symm_clashes
    _category.description     
@@ -3767,12 +3589,11 @@ save_pdbx_vrpt_instance_symm_clashes
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_symm_clashes.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -3859,7 +3680,6 @@ save__pdbx_vrpt_instance_symm_clashes.clashmag
                     The "magnitude" of the pdbx_vrpt_instance_clashes in Angstroms assessed by the validation package.
                     In this case, the "magnitude" of a pdbx_vrpt_instance_clashes is defined as 2.2 Angstrom 
                     (or 1.6 Angstrom if either label_atom_id is a hydrogen atom) minus the interatomic distance.
-                
 ;
 
    #
@@ -3869,7 +3689,7 @@ save__pdbx_vrpt_instance_symm_clashes.clashmag
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_symm-clash.clashmag"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -3889,7 +3709,8 @@ save__pdbx_vrpt_instance_symm_clashes.dist
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              angstroms
+   #
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_symm-clash.dist"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -3911,31 +3732,6 @@ save__pdbx_vrpt_instance_symm_clashes.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_symm_clashes.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Normally one character but can be up to 3.  Example label_alt_id="A"
-#             Obtained from _atom_site.label_alt_id 
-        
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_symm_clashes.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_symm_clashes
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_symm-clash.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
-##########################################
-# pdbx_vrpt_instance_mogul_bond_outliers #
-##########################################
 save_pdbx_vrpt_instance_mogul_bond_outliers
    _category.id              pdbx_vrpt_instance_mogul_bond_outliers
    _category.description     
@@ -3949,19 +3745,18 @@ save_pdbx_vrpt_instance_mogul_bond_outliers
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_mogul_bond_outliers.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
    #
-loop_
-   _category_examples.detail
-   _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _category_examples.detail  
 ;
     Example 1 - based on PDB entry 1o08
 ;
+
+   _category_examples.case    
 ;
      loop_
      _pdbx_vrpt_instance_mogul_bond_outliers.ordinal
@@ -3975,9 +3770,10 @@ loop_
      _pdbx_vrpt_instance_mogul_bond_outliers.Zscore
      _pdbx_vrpt_instance_mogul_bond_outliers.mindiff
      1  227  O5    C1   1.47  1.41  9866  0.03   2.04  0.00  
-     2  227  "P'"  O1   1.96  1.59    23  0.02  19.44  0.34  
+     2  227  "P'"  O1   1.96  1.59    23  0.02  19.44  0.34
 ;
-#
+
+   #
 save_
 #
 save__pdbx_vrpt_instance_mogul_bond_outliers.obsval
@@ -3994,7 +3790,7 @@ save__pdbx_vrpt_instance_mogul_bond_outliers.obsval
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_mog-bond-outlier.obsval"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4016,7 +3812,7 @@ save__pdbx_vrpt_instance_mogul_bond_outliers.mean
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_mog-bond-outlier.mean"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4038,7 +3834,7 @@ save__pdbx_vrpt_instance_mogul_bond_outliers.stdev
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_mog-bond-outlier.stdev"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4100,7 +3896,7 @@ save__pdbx_vrpt_instance_mogul_bond_outliers.mindiff
    #
    _item_type.code  float
    #
-   _item_units.code              angstroms
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_mog-bond-outlier.mindiff"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4152,26 +3948,6 @@ save__pdbx_vrpt_instance_mogul_bond_outliers.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_mogul_bond_outliers.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Obtained from _atom_site.label_alt_id 
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_mogul_bond_outliers.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_mogul_bond_outliers
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_mog-bond-outlier.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
 save__pdbx_vrpt_instance_mogul_bond_outliers.ordinal
    _item_description.description  "Uniquely identifies each bond outlier."
    #
@@ -4183,9 +3959,6 @@ save__pdbx_vrpt_instance_mogul_bond_outliers.ordinal
    #
 save_
 #
-###########################################
-# pdbx_vrpt_instance_intra_angle_outliers #
-###########################################
 save_pdbx_vrpt_instance_mogul_angle_outliers
    _category.id              pdbx_vrpt_instance_mogul_angle_outliers
    _category.description     
@@ -4199,12 +3972,11 @@ save_pdbx_vrpt_instance_mogul_angle_outliers
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_mogul_angle_outliers.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -4222,8 +3994,8 @@ save__pdbx_vrpt_instance_mogul_angle_outliers.obsval
    #
    _item_type.code  float
    #
-   _item_units.code              degrees
-
+   _item_units.code  degrees
+   #
    _item_aliases.alias_name  "_mog-angle-outlier.obsval"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -4245,7 +4017,7 @@ save__pdbx_vrpt_instance_mogul_angle_outliers.mean
    #
    _item_type.code  float
    #
-   _item_units.code              degrees
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_mog-angle-outlier.mean"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4268,7 +4040,7 @@ save__pdbx_vrpt_instance_mogul_angle_outliers.stdev
    #
    _item_type.code  float
    #
-   _item_units.code              degrees
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_mog-angle-outlier.stdev"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4396,26 +4168,6 @@ save__pdbx_vrpt_instance_mogul_angle_outliers.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_mogul_angle_outliers.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Obtained from _atom_site.label_alt_id 
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_mogul_angle_outliers.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_mogul_angle_outliers
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  text
-#    #
-#    _item_aliases.alias_name  "_mog-angle-outlier.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
 save__pdbx_vrpt_instance_mogul_angle_outliers.ordinal
    _item_description.description  "Uniquely identifies each instance of this category."
    #
@@ -4427,9 +4179,6 @@ save__pdbx_vrpt_instance_mogul_angle_outliers.ordinal
    #
 save_
 #
-#############################################
-# pdbx_vrpt_instance_mogul_torsion_outliers #
-#############################################
 save_pdbx_vrpt_instance_mogul_torsion_outliers
    _category.id              pdbx_vrpt_instance_mogul_torsion_outliers
    _category.description     
@@ -4443,12 +4192,11 @@ save_pdbx_vrpt_instance_mogul_torsion_outliers
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_mogul_torsion_outliers.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -4464,8 +4212,8 @@ save__pdbx_vrpt_instance_mogul_torsion_outliers.obsval
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              degrees
-  
+   #
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_mog-torsion-outlier.obsval"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4488,8 +4236,8 @@ save__pdbx_vrpt_instance_mogul_torsion_outliers.mean
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              degrees
-  
+   #
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_mog-torsion-outlier.mean"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4510,7 +4258,8 @@ save__pdbx_vrpt_instance_mogul_torsion_outliers.mindiff
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              degrees
+   #
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_mog-torsion-outlier.mindiff"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4551,7 +4300,8 @@ save__pdbx_vrpt_instance_mogul_torsion_outliers.stdev
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              degrees
+   #
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_mog-torsion-outlier.stdev"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4576,8 +4326,8 @@ save__pdbx_vrpt_instance_mogul_torsion_outliers.local_density
    _item_aliases.alias_name  "_mog-torsion-outlier.local_density"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.    0.  
@@ -4660,26 +4410,6 @@ save__pdbx_vrpt_instance_mogul_torsion_outliers.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_mogul_torsion_outliers.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-        
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_mogul_torsion_outliers.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_mogul_torsion_outliers
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  text
-#    #
-#    _item_aliases.alias_name  "_mog-torsion-outlier.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
 save__pdbx_vrpt_instance_mogul_torsion_outliers.ordinal
    _item_description.description  "Uniquely identifies each torsion outlier."
    #
@@ -4691,9 +4421,6 @@ save__pdbx_vrpt_instance_mogul_torsion_outliers.ordinal
    #
 save_
 #
-##########################################
-# pdbx_vrpt_instance_mogul_ring_outliers #
-##########################################
 save_pdbx_vrpt_instance_mogul_ring_outliers
    _category.id              pdbx_vrpt_instance_mogul_ring_outliers
    _category.description     
@@ -4704,18 +4431,16 @@ save_pdbx_vrpt_instance_mogul_ring_outliers
             The Mogul software (Bruno et al., 2004) works by comparing the ligand geometry
             with preferred molecular geometries derived from high-quality, small-molecule structures in 
             the Cambridge Structural pdbx_vrpt_database (CSD).
-        
 ;
 
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_instance_mogul_ring_outliers.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -4731,7 +4456,8 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.atoms
    _item.mandatory_code  no
    #
    _item_type.code  alphanum-csv
-   _item_examples.case       O5,C1,C2
+   #
+   _item_examples.case  O5,C1,C2
    #
    _item_aliases.alias_name  "_mog-ring-outlier.atoms"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4753,7 +4479,8 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.mean
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              degrees
+   #
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_mog-ring-outlier.mean"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4773,7 +4500,8 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.mindiff
    _item.category_id     pdbx_vrpt_instance_mogul_ring_outliers
    _item.mandatory_code  no
    #
-   _item_units.code              degrees
+   _item_units.code  degrees
+   #
    _item_type.code  float
    #
    _item_aliases.alias_name  "_mog-ring-outlier.mindiff"
@@ -4796,7 +4524,8 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.stdev
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              degrees
+   #
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_mog-ring-outlier.stdev"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4837,25 +4566,6 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_instance_mogul_ring_outliers.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_instance_mogul_ring_outliers.label_alt_id"
-#    _item.category_id     pdbx_vrpt_instance_mogul_ring_outliers
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  code
-#    #
-#    _item_aliases.alias_name  "_mog-ring-outlier.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
 save__pdbx_vrpt_instance_mogul_ring_outliers.ordinal
    _item_description.description  "Uniquely identifies each ring outlier."
    #
@@ -4867,28 +4577,24 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.ordinal
    #
 save_
 #
-###############################
-# pdbx_vrpt_restraint_summary #
-###############################
 save_pdbx_vrpt_restraint_summary
    _category.id              pdbx_vrpt_restraint_summary
    _category.description     "Provides summaries on hte number of restraints used in the analysis"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_restraint_summary.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
    #
-loop_
-   _category_examples.detail
-   _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _category_examples.detail  
 ;
     Example 1 - based on PDB entry 1o08
 ;
+
+   _category_examples.case    
 ;
     loop_
     _pdbx_vrpt_restraint_summary.ordinal
@@ -4896,10 +4602,10 @@ loop_
     _pdbx_vrpt_restraint_summary.value
      1  "Total distance restraints"                    1484  
      2  "Intra-residue (|i-j|=0)"                         0  
-     3  "Sequential (|i-j|=1)"                          204  
+     3  "Sequential (|i-j|=1)"                          204
 ;
 
-#
+   #
 save_
 #
 save__pdbx_vrpt_restraint_summary.description
@@ -4921,7 +4627,6 @@ save__pdbx_vrpt_restraint_summary.value
    _item_description.description  
 ;
             The number of restraints or the value associated with the description.
-        
 ;
 
    #
@@ -4948,29 +4653,22 @@ save__pdbx_vrpt_restraint_summary.ordinal
    #
 save_
 #
-#######################################
-# pdbx_vrpt_residual_angle_violations #
-#######################################
 save_pdbx_vrpt_residual_angle_violations
    _category.id              pdbx_vrpt_residual_angle_violations
    _category.description     "Dihedral-angle violation statistics within the bin"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_residual_angle_violations.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
    #
-   #
 save_
 #
 save__pdbx_vrpt_residual_angle_violations.max_violation
-   _item_description.description  
-;     The maximum value of the dihedral-angle violation within the bin
-;
-
+   _item_description.description  "     The maximum value of the dihedral-angle violation within the bin"
    #
    _item.name            "_pdbx_vrpt_residual_angle_violations.max_violation"
    _item.category_id     pdbx_vrpt_residual_angle_violations
@@ -5025,21 +4723,17 @@ save__pdbx_vrpt_residual_angle_violations.ordinal
    #
 save_
 #
-########################################
-# pdbx_vrpt_distance_violation_summary #
-########################################
 save_pdbx_vrpt_distance_violation_summary
    _category.id              pdbx_vrpt_distance_violation_summary
    _category.description     "Violated and consistently violated statistics in different restraints type"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_distance_violation_summary.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -5055,14 +4749,13 @@ save__pdbx_vrpt_distance_violation_summary.restraint_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-      Intra-residue .
-      Sequential    .
-      MediumRange   .
-      LongRange     .
-      InterChain    .
-      Total         .
-   #   
-
+     Intra-residue  .  
+     Sequential     .  
+     MediumRange    .  
+     LongRange      .  
+     InterChain     .  
+     Total          .  
+   #
    _item_aliases.alias_name  "_distance_violation_summary.restraint_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -5077,13 +4770,14 @@ save__pdbx_vrpt_distance_violation_summary.restraint_sub_type
    _item.mandatory_code  no
    #
    _item_type.code  code
+   #
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-      all                 .
-      BackboneBackbone    .
-      BackboneSidechain   .
-      SidechainSidechain  .
+     all                 .  
+     BackboneBackbone    .  
+     BackboneSidechain   .  
+     SidechainSidechain  .  
    #
    _item_aliases.alias_name  "_distance_violation_summary.restraint_sub_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -5092,10 +4786,7 @@ save__pdbx_vrpt_distance_violation_summary.restraint_sub_type
 save_
 #
 save__pdbx_vrpt_distance_violation_summary.consistently_violated_count
-   _item_description.description  
-;       Number of restraints that are violated in all models
-;
-
+   _item_description.description  "       Number of restraints that are violated in all models"
    #
    _item.name            "_pdbx_vrpt_distance_violation_summary.consistently_violated_count"
    _item.category_id     pdbx_vrpt_distance_violation_summary
@@ -5110,10 +4801,7 @@ save__pdbx_vrpt_distance_violation_summary.consistently_violated_count
 save_
 #
 save__pdbx_vrpt_distance_violation_summary.consistently_violated_percent_total
-   _item_description.description  
-;        Percentage of restraints that are violated in all models against total number of restraints
-;
-
+   _item_description.description  "        Percentage of restraints that are violated in all models against total number of restraints"
    #
    _item.name            "_pdbx_vrpt_distance_violation_summary.consistently_violated_percent_total"
    _item.category_id     pdbx_vrpt_distance_violation_summary
@@ -5124,8 +4812,8 @@ save__pdbx_vrpt_distance_violation_summary.consistently_violated_percent_total
    _item_aliases.alias_name  "_distance_violation_summary.consistently_violated_percent_total"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -5135,10 +4823,7 @@ loop_
 save_
 #
 save__pdbx_vrpt_distance_violation_summary.consistently_violated_percent_type
-   _item_description.description  
-;     Percentage of restraints that are violated in all models against number of restraints in a given restraint type.
-;
-
+   _item_description.description  "     Percentage of restraints that are violated in all models against number of restraints in a given restraint type."
    #
    _item.name            "_pdbx_vrpt_distance_violation_summary.consistently_violated_percent_type"
    _item.category_id     pdbx_vrpt_distance_violation_summary
@@ -5149,8 +4834,8 @@ save__pdbx_vrpt_distance_violation_summary.consistently_violated_percent_type
    _item_aliases.alias_name  "_distance_violation_summary.consistently_violated_percent_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -5201,8 +4886,8 @@ save__pdbx_vrpt_distance_violation_summary.percent_total
    _item_aliases.alias_name  "_distance_violation_summary.percent_total"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -5223,8 +4908,8 @@ save__pdbx_vrpt_distance_violation_summary.violated_percent_total
    _item_aliases.alias_name  "_distance_violation_summary.violated_percent_total"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -5245,8 +4930,8 @@ save__pdbx_vrpt_distance_violation_summary.violated_percent_type
    _item_aliases.alias_name  "_distance_violation_summary.violated_percent_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -5266,32 +4951,22 @@ save__pdbx_vrpt_distance_violation_summary.ordinal
    #
 save_
 #
-##############################################
-# pdbx_vrpt_distance_violation_model_summary #
-##############################################
 save_pdbx_vrpt_distance_violation_model_summary
    _category.id              pdbx_vrpt_distance_violation_model_summary
-   _category.description     
-;       List of number of violated distance restraints in each model
-;
-
+   _category.description     "       List of number of violated distance restraints in each model"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_distance_violation_model_summary.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
    #
-   #
 save_
 #
 save__pdbx_vrpt_distance_violation_model_summary.max_violation
-   _item_description.description  
-;      The maximum value of violation of a particular restraint in an ensemble.
-;
-
+   _item_description.description  "      The maximum value of violation of a particular restraint in an ensemble."
    #
    _item.name            "_pdbx_vrpt_distance_violation_model_summary.max_violation"
    _item.category_id     pdbx_vrpt_distance_violation_model_summary
@@ -5306,10 +4981,7 @@ save__pdbx_vrpt_distance_violation_model_summary.max_violation
 save_
 #
 save__pdbx_vrpt_distance_violation_model_summary.mean_violation
-   _item_description.description  
-;      The mean value of the violation of a given restraint in an ensemble.
-;
-
+   _item_description.description  "      The mean value of the violation of a given restraint in an ensemble."
    #
    _item.name            "_pdbx_vrpt_distance_violation_model_summary.mean_violation"
    _item.category_id     pdbx_vrpt_distance_violation_model_summary
@@ -5343,10 +5015,7 @@ save__pdbx_vrpt_distance_violation_model_summary.PDB_model_num
 save_
 #
 save__pdbx_vrpt_distance_violation_model_summary.standard_deviation
-   _item_description.description  
-;     The standard deviation of the value of the violations of a given restraint in an ensemble.
-;
-
+   _item_description.description  "     The standard deviation of the value of the violations of a given restraint in an ensemble."
    #
    _item.name            "_pdbx_vrpt_distance_violation_model_summary.standard_deviation"
    _item.category_id     pdbx_vrpt_distance_violation_model_summary
@@ -5386,21 +5055,17 @@ save__pdbx_vrpt_distance_violation_model_summary.ordinal
    #
 save_
 #
-#################################################
-# pdbx_vrpt_distance_violation_model_restraints #
-#################################################
 save_pdbx_vrpt_distance_violation_model_restraints
    _category.id              pdbx_vrpt_distance_violation_model_restraints
    _category.description     ">List of number of violated distance restraints in each model"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_distance_violation_model_restraints.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -5416,14 +5081,14 @@ save__pdbx_vrpt_distance_violation_model_restraints.dist_rest_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-      intraresidue        .
-      sequential          .
-      medium              .
-      long                .
-      interchain          .
-      total               .
-  
-_item_aliases.alias_name  "_dist_rest_types.dist_rest_type"
+     intraresidue  .  
+     sequential    .  
+     medium        .  
+     long          .  
+     interchain    .  
+     total         .  
+   #
+   _item_aliases.alias_name  "_dist_rest_types.dist_rest_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
    #
@@ -5474,24 +5139,17 @@ save__pdbx_vrpt_distance_violation_model_restraints.ordinal
    #
 save_
 #
-##########################################
-# pdbx_vrpt_violated_dihedral_restraints #
-##########################################
 save_pdbx_vrpt_violated_dihedral_restraints
    _category.id              pdbx_vrpt_violated_dihedral_restraints
-   _category.description     
-;    Enumerated all dihedral-angle violations.
-;
-
+   _category.description     "    Enumerated all dihedral-angle violations."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_violated_dihedral_restraints.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -5545,8 +5203,8 @@ save__pdbx_vrpt_violated_dihedral_restraints.violation
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              degrees
-  
+   #
+   _item_units.code  degrees
    #
    _item_aliases.alias_name  "_violated_dihedralangle_restraint.violation"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -5689,24 +5347,17 @@ save__pdbx_vrpt_violated_dihedral_restraints.ordinal
    #
 save_
 #
-##################################################
-# pdbx_vrpt_distance_violations_ensemble_summary #
-##################################################
 save_pdbx_vrpt_distance_violations_ensemble_summary
    _category.id              pdbx_vrpt_distance_violations_ensemble_summary
-   _category.description     
-;     Distance violation statistics in an ensemble.
-;
-
+   _category.description     "     Distance violation statistics in an ensemble."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_distance_violations_ensemble_summary.id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -5751,23 +5402,17 @@ save__pdbx_vrpt_distance_violations_ensemble_summary.id
    #
 save_
 #
-#########################################
-# pdbx_vrpt_distance_violation_ensemble #
-#########################################
 save_pdbx_vrpt_distance_violation_ensemble
    _category.id              pdbx_vrpt_distance_violation_ensemble
-   _category.description
-;                 This category enumerates the number of violated models for a given set of restraints.
-;
+   _category.description     "                 This category enumerates the number of violated models for a given set of restraints."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_distance_violation_ensemble.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -5783,12 +5428,12 @@ save__pdbx_vrpt_distance_violation_ensemble.dist_rest_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-      intraresidue        .
-      sequential          .
-      medium              .
-      long                .
-      interchain          .
-      total               .
+     intraresidue  .  
+     sequential    .  
+     medium        .  
+     long          .  
+     interchain    .  
+     total         .  
    #
    _item_aliases.alias_name  "_dist_rest_types2.dist_rest_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -5833,24 +5478,21 @@ save__pdbx_vrpt_distance_violation_ensemble.ordinal
    #
 save_
 #
-##############################################
-# pdbx_vrpt_dihedralangle_violations_summary #
-##############################################
 save_pdbx_vrpt_dihedralangle_violations_summary
    _category.id              pdbx_vrpt_dihedralangle_violations_summary
-   _category.description
+   _category.description     
 ;     Statistics about violated and consistently violated restraints. Restraints that are violated in
       all models are called consistently violated restraints.
 ;
+
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_dihedralangle_violations_summary.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -5866,9 +5508,9 @@ save__pdbx_vrpt_dihedralangle_violations_summary.restraint_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-      PHI   .
-      PSI   .
-      Total . 
+     PHI    .  
+     PSI    .  
+     Total  .  
    #
    _item_aliases.alias_name  "_dihedralangle_violation_summary.restraint_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -5877,9 +5519,7 @@ save__pdbx_vrpt_dihedralangle_violations_summary.restraint_type
 save_
 #
 save__pdbx_vrpt_dihedralangle_violations_summary.consistently_violated_count
-   _item_description.description  
-;       Number of restraints that are violated in all models
-;
+   _item_description.description  "       Number of restraints that are violated in all models"
    #
    _item.name            "_pdbx_vrpt_dihedralangle_violations_summary.consistently_violated_count"
    _item.category_id     pdbx_vrpt_dihedralangle_violations_summary
@@ -5894,28 +5534,25 @@ save__pdbx_vrpt_dihedralangle_violations_summary.consistently_violated_count
 save_
 #
 save__pdbx_vrpt_dihedralangle_violations_summary.consistently_violated_percent_total
-   _item_description.description  
-;     Percentage of restraints that are violated in all models against total number of restraints.
-;
-
+   _item_description.description  "     Percentage of restraints that are violated in all models against total number of restraints."
    #
    _item.name            "_pdbx_vrpt_dihedralangle_violations_summary.consistently_violated_percent_total"
    _item.category_id     pdbx_vrpt_dihedralangle_violations_summary
    _item.mandatory_code  no
    #
    _item_type.code  float
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
        0.0  100.0  
      100.0  100.0  
    #
-   #
    _item_aliases.alias_name  "_dihedralangle_violation_summary.consistently_violated_percent_total"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
+   #
 save_
 #
 save__pdbx_vrpt_dihedralangle_violations_summary.consistently_violated_percent_type
@@ -5931,7 +5568,7 @@ save__pdbx_vrpt_dihedralangle_violations_summary.consistently_violated_percent_t
    #
    _item_type.code  float
    #
-loop_
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -5941,7 +5578,7 @@ loop_
    _item_aliases.alias_name  "_dihedralangle_violation_summary.consistently_violated_percent_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
+   #
 save_
 #
 save__pdbx_vrpt_dihedralangle_violations_summary.restraints_count
@@ -5983,7 +5620,7 @@ save__pdbx_vrpt_dihedralangle_violations_summary.percent_total
    #
    _item_type.code  float
    #
-loop_
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -5993,14 +5630,15 @@ loop_
    _item_aliases.alias_name  "_dihedralangle_violation_summary.percent_total"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
+   #
 save_
 #
 save__pdbx_vrpt_dihedralangle_violations_summary.violated_percent_total
-   _item_description.description
+   _item_description.description  
 ;      Percentage of restraints that are violated at least in one model
        in given restraint type against the total restraints
 ;
+
    #
    _item.name            "_pdbx_vrpt_dihedralangle_violations_summary.violated_percent_total"
    _item.category_id     pdbx_vrpt_dihedralangle_violations_summary
@@ -6008,7 +5646,7 @@ save__pdbx_vrpt_dihedralangle_violations_summary.violated_percent_total
    #
    _item_type.code  float
    #
-loop_
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -6030,7 +5668,7 @@ save__pdbx_vrpt_dihedralangle_violations_summary.violated_percent_type
    #
    _item_type.code  float
    #
-loop_
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.0    0.0  
@@ -6040,7 +5678,7 @@ loop_
    _item_aliases.alias_name  "_dihedralangle_violation_summary.violated_percent_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
+   #
 save_
 #
 save__pdbx_vrpt_dihedralangle_violations_summary.ordinal
@@ -6054,21 +5692,17 @@ save__pdbx_vrpt_dihedralangle_violations_summary.ordinal
    #
 save_
 #
-###################################################
-# pdbx_vrpt_dihedralangle_violation_model_summary #
-###################################################
 save_pdbx_vrpt_dihedralangle_violation_model_summary
    _category.id              pdbx_vrpt_dihedralangle_violation_model_summary
    _category.description     "Number of violated restraints in a given model"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_dihedralangle_violation_model_summary.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -6092,10 +5726,7 @@ save__pdbx_vrpt_dihedralangle_violation_model_summary.PDB_model_num
 save_
 #
 save__pdbx_vrpt_dihedralangle_violation_model_summary.max_violation
-   _item_description.description  
-;      The maximum value of violation of a particular restraint in an ensemble
-;
-
+   _item_description.description  "      The maximum value of violation of a particular restraint in an ensemble"
    #
    _item.name            "_pdbx_vrpt_dihedralangle_violation_model_summary.max_violation"
    _item.category_id     pdbx_vrpt_dihedralangle_violation_model_summary
@@ -6110,10 +5741,7 @@ save__pdbx_vrpt_dihedralangle_violation_model_summary.max_violation
 save_
 #
 save__pdbx_vrpt_dihedralangle_violation_model_summary.mean_violation
-   _item_description.description  
-;       The mean value of the violation of a given restraint in an ensemble.
-;
-
+   _item_description.description  "       The mean value of the violation of a given restraint in an ensemble."
    #
    _item.name            "_pdbx_vrpt_dihedralangle_violation_model_summary.mean_violation"
    _item.category_id     pdbx_vrpt_dihedralangle_violation_model_summary
@@ -6128,10 +5756,7 @@ save__pdbx_vrpt_dihedralangle_violation_model_summary.mean_violation
 save_
 #
 save__pdbx_vrpt_dihedralangle_violation_model_summary.standard_deviation
-   _item_description.description  
-;        The standard deviation of the value of the violations of a given restraint in an ensemble.
-;
-
+   _item_description.description  "        The standard deviation of the value of the violations of a given restraint in an ensemble."
    #
    _item.name            "_pdbx_vrpt_dihedralangle_violation_model_summary.standard_deviation"
    _item.category_id     pdbx_vrpt_dihedralangle_violation_model_summary
@@ -6171,24 +5796,17 @@ save__pdbx_vrpt_dihedralangle_violation_model_summary.ordinal
    #
 save_
 #
-###########################################
-# pdbx_vrpt_dihedralangle_violation_model #
-###########################################
 save_pdbx_vrpt_dihedralangle_violation_model
    _category.id              pdbx_vrpt_dihedralangle_violation_model
-   _category.description     
-;       Number of violated restraints ina given model.
-;
-
+   _category.description     "       Number of violated restraints ina given model."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_dihedralangle_violation_model.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -6204,9 +5822,9 @@ save__pdbx_vrpt_dihedralangle_violation_model.ang_rest_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-      PHI   .
-      PSI   .
-      Total . 
+     PHI    .  
+     PSI    .  
+     Total  .  
    #
    _item_aliases.alias_name  "_ang_rest_types.ang_rest_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -6259,23 +5877,17 @@ save__pdbx_vrpt_dihedralangle_violation_model.ordinal
    #
 save_
 #
-######################################################
-# pdbx_vrpt_dihedralangle_violation_ensemble_summary #
-######################################################
 save_pdbx_vrpt_dihedralangle_violation_ensemble_summary
    _category.id              pdbx_vrpt_dihedralangle_violation_ensemble_summary
-   _category.description     
-;     Dihedral-angle violation statistics in the ensemble
-;
+   _category.description     "     Dihedral-angle violation statistics in the ensemble"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_dihedralangle_violation_ensemble_summary.id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -6320,24 +5932,17 @@ save__pdbx_vrpt_dihedralangle_violation_ensemble_summary.id
    #
 save_
 #
-##############################################
-# pdbx_vrpt_dihedralangle_ensemble_violation #
-##############################################
 save_pdbx_vrpt_dihedralangle_ensemble_violation
    _category.id              pdbx_vrpt_dihedralangle_ensemble_violation
-   _category.description     
-;        Dihedral-angle violation statistics in the ensemble.
-;
-
+   _category.description     "        Dihedral-angle violation statistics in the ensemble."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_dihedralangle_ensemble_violation.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -6353,10 +5958,10 @@ save__pdbx_vrpt_dihedralangle_ensemble_violation.ang_rest_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-      PHI   .
-      PSI   .
-      Total . 
-    #
+     PHI    .  
+     PSI    .  
+     Total  .  
+   #
    _item_aliases.alias_name  "_ang_rest_types.ang_rest_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -6400,28 +6005,23 @@ save__pdbx_vrpt_dihedralangle_ensemble_violation.ordinal
    #
 save_
 #
-##########################################
-# pdbx_vrpt_residual_distance_violations #
-##########################################
 save_pdbx_vrpt_residual_distance_violations
    _category.id              pdbx_vrpt_residual_distance_violations
    _category.description     "Summary of distance violations in different bins based on its magnitude of violation"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_residual_distance_violations.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
 save__pdbx_vrpt_residual_distance_violations.max_violation
    _item_description.description  
 ;The maximum value of distance violation with in the given bin
-	    
 ;
 
    #
@@ -6478,24 +6078,17 @@ save__pdbx_vrpt_residual_distance_violations.ordinal
    #
 save_
 #
-###############################################
-# pdbx_vrpt_most_violated_distance_restraints #
-###############################################
 save_pdbx_vrpt_most_violated_distance_restraints
    _category.id              pdbx_vrpt_most_violated_distance_restraints
-   _category.description     
-;     Restraints that are violated in more than one models
-;
-
+   _category.description     "     Restraints that are violated in more than one models"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_most_violated_distance_restraints.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -6717,6 +6310,7 @@ save__pdbx_vrpt_most_violated_distance_restraints.resnum_2
               The residue number aka sequence id for a residue.
               Obtained from _atom_site.auth_seq_id
 ;
+
    #
    _item.name            "_pdbx_vrpt_most_violated_distance_restraints.resnum_2"
    _item.category_id     pdbx_vrpt_most_violated_distance_restraints
@@ -6830,7 +6424,6 @@ save__pdbx_vrpt_most_violated_distance_restraints.atom_2
    _item_description.description  
 ;
             An label_atom_id name from cif item _atom_site.label_atom_id and _chem_comp_atom.atom_id.
-        
 ;
 
    #
@@ -6877,10 +6470,7 @@ save__pdbx_vrpt_most_violated_distance_restraints.median_violation
 save_
 #
 save__pdbx_vrpt_most_violated_distance_restraints.standard_deviation
-   _item_description.description  
-;     The standard deviation of the value of the violations of a given restraint in an ensemble
-;
-
+   _item_description.description  "     The standard deviation of the value of the violations of a given restraint in an ensemble"
    #
    _item.name            "_pdbx_vrpt_most_violated_distance_restraints.standard_deviation"
    _item.category_id     pdbx_vrpt_most_violated_distance_restraints
@@ -6895,10 +6485,7 @@ save__pdbx_vrpt_most_violated_distance_restraints.standard_deviation
 save_
 #
 save__pdbx_vrpt_most_violated_distance_restraints.violated_models
-   _item_description.description  
-;     Number of violated models for a given restraint or set of restraints
-;
-
+   _item_description.description  "     Number of violated models for a given restraint or set of restraints"
    #
    _item.name            "_pdbx_vrpt_most_violated_distance_restraints.violated_models"
    _item.category_id     pdbx_vrpt_most_violated_distance_restraints
@@ -6953,24 +6540,17 @@ save__pdbx_vrpt_most_violated_distance_restraints.ordinal
    #
 save_
 #
-##########################################
-# pdbx_vrpt_violated_distance_restraints #
-##########################################
 save_pdbx_vrpt_violated_distance_restraints
    _category.id              pdbx_vrpt_violated_distance_restraints
-   _category.description     
-;      List of all violated distance restraints
-;
-
+   _category.description     "      List of all violated distance restraints"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_violated_distance_restraints.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -7015,10 +6595,7 @@ save__pdbx_vrpt_violated_distance_restraints.atom_2
 save_
 #
 save__pdbx_vrpt_violated_distance_restraints.violation
-   _item_description.description  
-;     Absolute value of the violation
-;
-
+   _item_description.description  "     Absolute value of the violation"
    #
    _item.name            "_pdbx_vrpt_violated_distance_restraints.violation"
    _item.category_id     pdbx_vrpt_violated_distance_restraints
@@ -7101,21 +6678,17 @@ save__pdbx_vrpt_violated_distance_restraints.ordinal
    #
 save_
 #
-####################################################
-# pdbx_vrpt_most_violated_dihedralangle_restraints #
-####################################################
 save_pdbx_vrpt_most_violated_dihedralangle_restraints
    _category.id              pdbx_vrpt_most_violated_dihedralangle_restraints
    _category.description     "Dihedral-angle restraints that are violated in more than one model"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_most_violated_dihedralangle_restraints.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -7467,10 +7040,7 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.atom_2
 save_
 #
 save__pdbx_vrpt_most_violated_dihedralangle_restraints.mean_angle_violation
-   _item_description.description  
-;      Mean value of dihedral-angle violation over all violated models
-;
-
+   _item_description.description  "      Mean value of dihedral-angle violation over all violated models"
    #
    _item.name            "_pdbx_vrpt_most_violated_dihedralangle_restraints.mean_angle_violation"
    _item.category_id     pdbx_vrpt_most_violated_dihedralangle_restraints
@@ -7485,10 +7055,7 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.mean_angle_violation
 save_
 #
 save__pdbx_vrpt_most_violated_dihedralangle_restraints.standard_deviation
-   _item_description.description  
-;      The standard deviation of the value of the violations of a given restraint in an ensemble
-;
-
+   _item_description.description  "      The standard deviation of the value of the violations of a given restraint in an ensemble"
    #
    _item.name            "_pdbx_vrpt_most_violated_dihedralangle_restraints.standard_deviation"
    _item.category_id     pdbx_vrpt_most_violated_dihedralangle_restraints
@@ -7714,7 +7281,6 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.chain_4
    _item_description.description  
 ;
             The auth_asym_id identifier for the fourth residue.
-        
 ;
 
    #
@@ -7920,21 +7486,17 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.ordinal
    #
 save_
 #
-#####################################
-# pdbx_vrpt_model_instance_geometry #
-#####################################
 save_pdbx_vrpt_model_instance_geometry
    _category.id              pdbx_vrpt_model_instance_geometry
-   _category.description     '            This category formation on the geometry of all residues'
+   _category.description     "            This category formation on the geometry of all residues"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_model_instance_geometry.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -7953,7 +7515,8 @@ save__pdbx_vrpt_model_instance_geometry.OWAB
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code          'angstroms_squared'
+   #
+   _item_units.code  angstroms_squared
    #
    _item_aliases.alias_name  "_ModelledSubgroup.owab"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -8094,8 +7657,8 @@ save__pdbx_vrpt_model_instance_geometry.program_for_bond_angle_geometry
    _item.mandatory_code  no
    #
    _item_type.code  code
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      molprobity  .  
@@ -8139,8 +7702,8 @@ save__pdbx_vrpt_model_instance_geometry.ligand_chirality_outlier
    _item_aliases.alias_name  "_ModelledSubgroup.ligand_chirality_outlier"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      Y  .  
@@ -8167,7 +7730,7 @@ save__pdbx_vrpt_model_instance_geometry.validate
    _item_enumeration.detail
      True   .  
      False  .  
-
+   #
    _item_aliases.alias_name  "_ModelledSubgroup.validate"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -8210,8 +7773,8 @@ save__pdbx_vrpt_model_instance_geometry.cis_peptide
    _item_aliases.alias_name  "_ModelledSubgroup.cis_peptide"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      Y  .  
@@ -8258,8 +7821,8 @@ save__pdbx_vrpt_model_instance_geometry.RNA_suite
    _item_aliases.alias_name  "_ModelledSubgroup.RNAsuite"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      NonRotameric       .  
@@ -8332,8 +7895,8 @@ save__pdbx_vrpt_model_instance_geometry.ramachandran_class
    _item_aliases.alias_name  "_ModelledSubgroup.rama"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      Favored  .  
@@ -8349,7 +7912,6 @@ save__pdbx_vrpt_model_instance_geometry.rotamer_class
             For proline the ring pucker is classified as "Cg_endo", "Cg_exo" or "OUTLIER"
             Examples of common observed classifications:
             Protein and polypeptide specific produced by the molprobity step.
-        
 ;
 
    #
@@ -8360,19 +7922,20 @@ save__pdbx_vrpt_model_instance_geometry.rotamer_class
    _item_type.code  line
    #
    loop_
-    _item_examples.case  mt
-                         t
-			 OUTLIER
-			 m
-			 p
-			 m-20
-			 m-85
-			 tp
-			 t80
-			 mt-10
-			 Cg_endo
-			 Cg_exo
-
+   _item_examples.case
+     mt       
+     t        
+     OUTLIER  
+     m        
+     p        
+     m-20     
+     m-85     
+     tp       
+     t80      
+     mt-10    
+     Cg_endo  
+     Cg_exo   
+   #
    _item_aliases.alias_name  "_ModelledSubgroup.rota"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -8433,28 +7996,6 @@ save__pdbx_vrpt_model_instance_geometry.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_model_instance_geometry.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Normally one character but can be up to 3.  Example label_alt_id="A"
-#             Obtained from _atom_site.label_alt_id 
-        
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_model_instance_geometry.label_alt_id"
-#    _item.category_id     pdbx_vrpt_model_instance_geometry
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  text
-#    #
-#    _item_aliases.alias_name  "_ModelledSubgroup.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
 save__pdbx_vrpt_model_instance_geometry.ordinal
    _item_description.description  "Uniquely identifies each instance of this category."
    #
@@ -8466,21 +8007,17 @@ save__pdbx_vrpt_model_instance_geometry.ordinal
    #
 save_
 #
-####################################
-# pdbx_vrpt_model_instance_density #
-####################################
 save_pdbx_vrpt_model_instance_density
    _category.id              pdbx_vrpt_model_instance_density
-   _category.description     '            This category provides information on X-ray density analysis of a residue'
+   _category.description     "            This category provides information on X-ray density analysis of a residue"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_model_instance_density.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -8511,7 +8048,6 @@ save__pdbx_vrpt_model_instance_density.RSRCC
             experimental diffraction data. A value above 0.95 normally indicates a very
             good fit. RSCC around 0.90 are generally OK. A poor fit results in a value around or below 0.80.
             X-ray specific produced by the EDS step.
-        
 ;
 
    #
@@ -8532,7 +8068,6 @@ save__pdbx_vrpt_model_instance_density.RSR
 ;
             Real Space R-value (RSR) for the residue from the EDS generated map.
             X-ray specific produced by the EDS step.
-        
 ;
 
    #
@@ -8555,7 +8090,6 @@ save__pdbx_vrpt_model_instance_density.RSRZ
             RSRZ is calculated only for standard amino acids and nucleotides in protein, DNA and RNA chains. 
             A residue is considered an RSRZ outlier if its RSRZ value is greater than 2.
             X-ray specific produced by the EDS step.
-        
 ;
 
    #
@@ -8587,8 +8121,8 @@ save__pdbx_vrpt_model_instance_density.ligand_density_outlier
    _item_aliases.alias_name  "_ModelledSubgroup.ligand_density_outlier"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      Y  .  
@@ -8610,28 +8144,6 @@ save__pdbx_vrpt_model_instance_density.instance_id
    #
 save_
 #
-# save__pdbx_vrpt_model_instance_density.label_alt_id
-#    _item_description.description  
-# ;
-#             This attribute will be set if the pdbx_vrpt_model_instance has atoms with the alternate position indicator set.
-#             Normally one character but can be up to 3.  Example label_alt_id="A"
-#             Obtained from _atom_site.label_alt_id 
-        
-# ;
-
-#    #
-#    _item.name            "_pdbx_vrpt_model_instance_density.label_alt_id"
-#    _item.category_id     pdbx_vrpt_model_instance_density
-#    _item.mandatory_code  no
-#    #
-#    _item_type.code  text
-#    #
-#    _item_aliases.alias_name  "_ModelledSubgroup.altcode"
-#    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
-#    _item_aliases.version     V6.00
-#    #
-# save_
-#
 save__pdbx_vrpt_model_instance_density.ordinal
    _item_description.description  "Uniquely identifies each instance of this category."
    #
@@ -8643,21 +8155,17 @@ save__pdbx_vrpt_model_instance_density.ordinal
    #
 save_
 #
-#################################
-# pdbx_vrpt_summary_diffraction #
-#################################
 save_pdbx_vrpt_summary_diffraction
    _category.id              pdbx_vrpt_summary_diffraction
-   _category.description     '            This category provides summary information on the analysis of of the structure factor file for X-ray/Neutron entries.'
+   _category.description     "            This category provides summary information on the analysis of of the structure factor file for X-ray/Neutron entries."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_summary_diffraction.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -8677,7 +8185,6 @@ save__pdbx_vrpt_summary_diffraction.Babinet_b
 ;
             REFMAC scaling parameter as reported in log output line starting 'bulk solvent: scale'.
             X-ray entry specific, obtained in the EDS step from REFMAC calculation.
-        
 ;
 
    #
@@ -8729,7 +8236,8 @@ save__pdbx_vrpt_summary_diffraction.Wilson_B_estimate
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code          'angstroms_squared'
+   #
+   _item_units.code  angstroms_squared
    #
    _item_aliases.alias_name  "_Entry.WilsonBestimate"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -8893,7 +8401,7 @@ save__pdbx_vrpt_summary_diffraction.DCC_Rfree
 ;
             Rfree as calculated by DCC.
 ;
-   # Either a decimal number or the string "NotAvailable".
+
    #
    _item.name            "_pdbx_vrpt_summary_diffraction.DCC_Rfree"
    _item.category_id     pdbx_vrpt_summary_diffraction
@@ -8941,7 +8449,8 @@ save__pdbx_vrpt_summary_diffraction.EDS_res_high
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              angstroms
+   #
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_Entry.EDS_resolution"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -8962,7 +8471,8 @@ save__pdbx_vrpt_summary_diffraction.EDS_res_low
    _item.mandatory_code  no
    #
    _item_type.code  float
-   _item_units.code              angstroms
+   #
+   _item_units.code  angstroms
    #
    _item_aliases.alias_name  "_Entry.EDS_resolution_low"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -9030,7 +8540,7 @@ save__pdbx_vrpt_summary_diffraction.trans_NCS_details
    #
    _item_type.code  text
    #
-   _item_examples.case       "The largest off-origin peak in the Patterson function is 8.82% of the height of the origin peak. No significant pseudotranslation is detected."
+   _item_examples.case  "The largest off-origin peak in the Patterson function is 8.82% of the height of the origin peak. No significant pseudotranslation is detected."
    #
    _item_aliases.alias_name  "_Entry.TransNCS"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -9054,8 +8564,8 @@ save__pdbx_vrpt_summary_diffraction.B_factor_type
    _item_aliases.alias_name  "_Entry.B_factor_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      PARTIAL  .  
@@ -9121,8 +8631,8 @@ save__pdbx_vrpt_summary_diffraction.data_completeness
    _item_aliases.alias_name  "_Entry.DataCompleteness"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.    0.  
@@ -9167,8 +8677,8 @@ save__pdbx_vrpt_summary_diffraction.percent_free_reflections
    _item_aliases.alias_name  "_Entry.percent-free-reflections"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.    0.  
@@ -9193,8 +8703,8 @@ save__pdbx_vrpt_summary_diffraction.percent_RSRZ_outliers
    _item_aliases.alias_name  "_Entry.percent-RSRZ-outliers"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.    0.  
@@ -9264,7 +8774,6 @@ save__pdbx_vrpt_summary_diffraction.PDB_Rfree
    _item_description.description  
 ;
             The reported Rfree.
-        
 ;
 
    #
@@ -9295,7 +8804,7 @@ save__pdbx_vrpt_summary_diffraction.twin_fraction
    #
    _item_type.code  text
    #
-   _item_examples.case       "h,h-k,h-l:0.477;-h,-h+k,-l:0.020;-h,-k,-h+l:0.017"
+   _item_examples.case  h,h-k,h-l:0.477;-h,-h+k,-l:0.020;-h,-k,-h+l:0.017
    #
    _item_aliases.alias_name  "_Entry.TwinFraction"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -9336,17 +8845,14 @@ save__pdbx_vrpt_summary_diffraction.ordinal
    #
 save_
 #
-##############################
-# pdbx_vrpt_summary_geometry #
-##############################
 save_pdbx_vrpt_summary_geometry
    _category.id              pdbx_vrpt_summary_geometry
-   _category.description     '            This category provides a summary of geometrical issue information on the entry'
+   _category.description     "            This category provides a summary of geometrical issue information on the entry"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_summary_geometry.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
@@ -9369,8 +8875,8 @@ save__pdbx_vrpt_summary_geometry.percent_ramachandran_outliers
    _item_aliases.alias_name  "_Entry.percent-rama-outliers"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.    0.  
@@ -9514,8 +9020,8 @@ save__pdbx_vrpt_summary_geometry.percent_rotamer_outliers
    _item_aliases.alias_name  "_Entry.percent-rota-outliers"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.    0.  
@@ -9541,8 +9047,8 @@ save__pdbx_vrpt_summary_geometry.percent_ramachandran_outliers_full_length
    _item_aliases.alias_name  "_Entry.percent-rama-outliers-full-length"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.    0.  
@@ -9568,8 +9074,8 @@ save__pdbx_vrpt_summary_geometry.percent_rotamer_outliers_full_length
    _item_aliases.alias_name  "_Entry.percent-rota-outliers-full-length"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #   
-loop_
+   #
+   loop_
    _item_range.minimum
    _item_range.maximum
        0.    0.  
@@ -9628,21 +9134,17 @@ save__pdbx_vrpt_summary_geometry.ordinal
    #
 save_
 #
-#########################
-# pdbx_vrpt_summary_nmr #
-#########################
 save_pdbx_vrpt_summary_nmr
    _category.id              pdbx_vrpt_summary_nmr
-   _category.description     '            This category provides a summary of NMR report information'
+   _category.description     "            This category provides a summary of NMR report information"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_summary_nmr.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -9662,7 +9164,6 @@ save__pdbx_vrpt_summary_nmr.nmr_models_consistency_flag
 ;
             A flag indicating if all models in the NMR ensemble contain the exact 
             same atoms ("True") or if the models differ in this respect ("False").
-        
 ;
 
    #
@@ -9681,7 +9182,7 @@ save_
 save__pdbx_vrpt_summary_nmr.nmrclust_representative_model
    _item_description.description  
 ;
-            Overall representative PDB_model_num of the NMR ensemble as identified by NMRClust. 
+            Overall representative PDB_model_num of the NMR ensemble as identified by NMRClust.
 ;
 
    #
@@ -9887,21 +9388,17 @@ save__pdbx_vrpt_summary_nmr.ordinal
    #
 save_
 #
-########################
-# pdbx_vrpt_summary_em #
-########################
 save_pdbx_vrpt_summary_em
    _category.id              pdbx_vrpt_summary_em
-   _category.description     '            This category provides a summary of EM report information'
+   _category.description     "            This category provides a summary of EM report information"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_summary_em.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10231,21 +9728,17 @@ save__pdbx_vrpt_summary_em.ordinal
    #
 save_
 #
-#############################
-# pdbx_vrpt_percentile_list #
-#############################
 save_pdbx_vrpt_percentile_list
    _category.id              pdbx_vrpt_percentile_list
    _category.description     '            A "pdbx_vrpt_percentile_list" provides a summary of which structures are used for comparisons'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_percentile_list.id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10282,21 +9775,17 @@ save__pdbx_vrpt_percentile_list.id
    #
 save_
 #
-#############################
-# pdbx_vrpt_percentile_type #
-#############################
 save_pdbx_vrpt_percentile_type
    _category.id              pdbx_vrpt_percentile_type
    _category.description     '            A "pdbx_vrpt_percentile_type" provides a mapping of a type id to the percentile type'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_percentile_type.id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10319,8 +9808,8 @@ save__pdbx_vrpt_percentile_type.type
    _item.mandatory_code  yes
    #
    _item_type.code  text
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      all_atom_clashscore           .  
@@ -10332,21 +9821,17 @@ loop_
    #
 save_
 #
-###################################
-# pdbx_vrpt_percentile_conditions #
-###################################
 save_pdbx_vrpt_percentile_conditions
    _category.id              pdbx_vrpt_percentile_conditions
    _category.description     '            A "pdbx_vrpt_percentile_conditions" provides a summary of various scores by resolution include number of structues comparing to'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_percentile_conditions.id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10433,21 +9918,17 @@ save__pdbx_vrpt_percentile_conditions.id
    #
 save_
 #
-#############################
-# pdbx_vrpt_percentile_view #
-#############################
 save_pdbx_vrpt_percentile_entity_view
    _category.id              pdbx_vrpt_percentile_entity_view
    _category.description     '            A "pdbx_vrpt_percentile_entity_view" provides various statistics on a per entity basis for relative and global structure comparisons'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_percentile_entity_view.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10521,7 +10002,7 @@ save_
 save__pdbx_vrpt_percentile_entity_view.entity_id
    _item_description.description  
 ;
-            The entity id for the residue or chain. This is from item _atom_site.label_entity_id that is a pointer to _entity.id in the ENTITY category. 
+            The entity id for the residue or chain. This is from item _atom_site.label_entity_id that is a pointer to _entity.id in the ENTITY category.
 ;
 
    #
@@ -10581,21 +10062,17 @@ save__pdbx_vrpt_percentile_entity_view.ordinal
    #
 save_
 #
-######################
-# pdbx_vrpt_database #
-######################
 save_pdbx_vrpt_database
    _category.id              pdbx_vrpt_database
    _category.description     '            A "pdbx_vrpt_database" provides the accession codes used in this entry'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_database.id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10621,21 +10098,17 @@ save__pdbx_vrpt_database.id
    #
 save_
 #
-###################
-# pdbx_vrpt_exptl #
-###################
 save_pdbx_vrpt_exptl
    _category.id              pdbx_vrpt_exptl
    _category.description     '            A "pdbx_vrpt_exptl" list the types of experiments used in this entry'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_exptl.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10661,21 +10134,17 @@ save__pdbx_vrpt_exptl.ordinal
    #
 save_
 #
-####################
-# pdbx_vrpt_entity #
-####################
 save_pdbx_vrpt_entity
    _category.id              pdbx_vrpt_entity
    _category.description     '            A "pdbx_vrpt_entity" lists the entity and type in the model'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_entity.id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10698,8 +10167,8 @@ save__pdbx_vrpt_entity.type
    _item.mandatory_code  yes
    #
    _item_type.code  code
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      macrolide    .  
@@ -10721,22 +10190,17 @@ save__pdbx_vrpt_entity.description
    #
 save_
 #
-##################
-# pdbx_vrpt_asym #
-##################
 save_pdbx_vrpt_asym
    _category.id              pdbx_vrpt_asym
    _category.description     '            A "pdbx_vrpt_asym" provides a mapping between the label_asym_id and entity in the model'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_asym.label_asym_id"
-#                       "_pdbx_vrpt_asym.entity_id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10769,21 +10233,17 @@ save__pdbx_vrpt_asym.entity_id
    #
 save_
 #
-###########################################
-# pdbx_vrpt_em_graph_fsc_indicateor_curve #
-###########################################
 save_pdbx_vrpt_em_graph_fsc_indicator_curve
    _category.id              pdbx_vrpt_em_graph_fsc_indicator_curve
    _category.description     "   EM validation report 2D plot of Fourier Shell Correlation (fsc) indicator curve"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_em_graph_fsc_indicator_curve.graph_id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10833,9 +10293,6 @@ save__pdbx_vrpt_em_graph_fsc_indicator_curve.data_curve_name
    _item_type.code  line
    #
 save_
-################################
-# pdbx_vrpt_em_graph_fsc_curve #
-################################
 #
 save_pdbx_vrpt_em_graph_fsc_curve
    _category.id              pdbx_vrpt_em_graph_fsc_curve
@@ -10843,12 +10300,11 @@ save_pdbx_vrpt_em_graph_fsc_curve
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_em_graph_fsc_curve.graph_id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10888,22 +10344,17 @@ save__pdbx_vrpt_em_graph_fsc_curve.curve_name
    #
 save_
 #
-#########################################
-# pdbx_vrpt_em_resolution_intersections #
-#########################################
-
 save_pdbx_vrpt_em_resolution_intersections
    _category.id              pdbx_vrpt_em_resolution_intersections
    _category.description     "   EM validation report intersections between fsc_curves and their corresponding fsc_indicator_curves"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_em_resolution_intersections.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -10999,22 +10450,17 @@ save__pdbx_vrpt_em_resolution_intersections.type
    #
 save_
 #
-#########################################
-# pdbx_vrpt_em_graph_fsc_atom_inclusion #
-#########################################
-
 save_pdbx_vrpt_em_graph_atom_inclusion
    _category.id              pdbx_vrpt_em_graph_atom_inclusion
    _category.description     "   EM validation report 2D plot of atom inclusion for the primary map"
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_em_graph_atom_inclusion.graph_id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -11040,8 +10486,8 @@ save__pdbx_vrpt_em_graph_atom_inclusion.type
    _item.mandatory_code  yes
    #
    _item_type.code  line
-   #   
-loop_
+   #
+   loop_
    _item_enumeration.value
    _item_enumeration.detail
      all_atoms  "Containing the data required to plot the atom inclusion for for all atoms."  
@@ -11049,21 +10495,17 @@ loop_
    #
 save_
 #
-###########################################
-# pdbx_vrpt_em_details #
-###########################################
 save_pdbx_vrpt_em_details
    _category.id              pdbx_vrpt_em_details
    _category.description     "   This category provides details specific to EM."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_em_2d_graph_data.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -11093,22 +10535,17 @@ save__pdbx_vrpt_em_details.recommended_contour_level
    #
 save_
 #
-##############################
-# pdbx_vrpt_em_2d_graph_data #
-##############################
-
 save_pdbx_vrpt_em_2d_graph_data
    _category.id              pdbx_vrpt_em_2d_graph_data
    _category.description     "   pdbx_vrpt_em_2d_graph_data contains the data contents for EM validation report 2D graphs."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_em_2d_graph_data.ordinal"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -11159,21 +10596,17 @@ save__pdbx_vrpt_em_2d_graph_data.y_value
    #
 save_
 #
-##############################
-# pdbx_vrpt_em_2d_graph_info #
-##############################
 save_pdbx_vrpt_em_2d_graph_info
    _category.id              pdbx_vrpt_em_2d_graph_info
    _category.description     "   pdbx_vrpt_em_2d_graph_info contains common details for representation of EM validation report 2D graphs."
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_em_2d_graph_info.graph_id"
-   #   
-loop_
+   #
+   loop_
    _category_group.id
      inclusive_group          
      validation_report_group  
-   #
    #
 save_
 #
@@ -11304,5 +10737,3 @@ save__pdbx_vrpt_em_2d_graph_info.y_axis_units
    #
 save_
 #
-
-###  EOF mmcif_pdbx_vrpt-def-core.dic

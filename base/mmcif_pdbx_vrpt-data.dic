@@ -58,6 +58,18 @@ data_mmcif_pdbx_vrpt-data.dic
                '[][_,.;:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
 ;              code item types/single words ...
 ;
+               ucode      uchar
+               '[][_,.;:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words  (case insensitive) ...
+;
+               line      char
+               '[][ \t_(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              char item types / multi-word items ...
+;
+               text      char
+               '[][ \n\t()_,.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              text item types / multi-line text ...
+;
                float     numb
           '-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)?'
 ;              float item types are the subset of numbers that are the floating
@@ -68,22 +80,36 @@ data_mmcif_pdbx_vrpt-data.dic
 ;              int item types are the subset of numbers that are the negative
                or positive integers.
 ;
-               text      char
-               '[][ \n\t()_,.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
-;              text item types / multi-line text ...
+               atcode      char
+               '[][ _(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              Character data type for atom names  ...
 ;
-               line      char
-               '[][ \t_(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
-;              char item types / multi-word items ...
+
+               yyyy-mm-dd:hh:mm  char
+    '[0-9]?[0-9]?[0-9][0-9]-[0-9]?[0-9](-[0-9]?[0-9])?(:[0-9]?[0-9]:[0-9][0-9])?'
 ;
+               Standard format for CIF dates with optional time stamp.
+;
+
                yyyy-mm-dd  char
                 '[0-9]?[0-9]?[0-9][0-9]-[0-9]?[0-9]-[0-9][0-9]'
 ;
                Standard format for CIF dates.
 ;
                alphanum-csv        char
-               '[A-Za-z0-9]+(,[A-Za-z0-9]+)?'
+               '[A-Za-z0-9]+(,[A-Za-z0-9]+){0,}'
 ;              comma separated alpha numeric codes (single words)  (case sensitive) ...
 ;
+
+#####################
+## ITEM_UNITS_LIST ##
+#####################
+
+     loop_
+    _item_units_list.code
+    _item_units_list.detail
+     'angstroms'              'Angstroms   (metres * 10^(-10)^)'
+     'degrees'                'degrees (of arc)'
+     'angstroms_squared'      'Angstroms squared  (metres * 10^(-10)^)^2^'
 
 ###  EOF  mmcif_pdbx_vrpt-data.dic
