@@ -1,0 +1,97 @@
+###########################################################################
+#
+# File:  mmcif_pdbx_vrpt-audit.dic
+#
+#                     mmCIF PDBX_VRPT audit tracking information
+#
+###########################################################################
+data_mmcif_pdbx_vrpt-audit.dic
+
+loop_
+_category_group_list.id
+_category_group_list.parent_id
+_category_group_list.description
+              'audit_group'
+              'inclusive_group'
+;              Categories that describe dictionary maintenance and
+               identification.
+;
+
+###################
+## AUDIT_CONFORM ##
+###################
+# From mmcif_pdbx dictionary
+save_audit_conform
+    _category.description
+;              Data items in the AUDIT_CONFORM category describe the
+               dictionary versions against which the data names appearing in
+               the current data block are conformant.
+;
+    _category.id                  audit_conform
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_audit_conform.dict_name'
+                                '_audit_conform.dict_version'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'audit_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - any file conforming to the current CIF core dictionary.
+;
+;
+    _audit_conform.dict_name         cif_core.dic
+    _audit_conform.dict_version      2.3.1
+    _audit_conform.dict_location
+                         ftp://ftp.iucr.org/pub/cif_core.2.3.1.dic
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__audit_conform.dict_location
+    _item_description.description
+;              A file name or uniform resource locator (URL) for the
+               dictionary to which the current data block conforms.
+;
+    _item.name                  '_audit_conform.dict_location'
+    _item.category_id             audit_conform
+    _item.mandatory_code          no
+    _item_aliases.alias_name    '_audit_conform_dict_location'
+    _item_aliases.dictionary      cif_core.dic
+    _item_aliases.version         2.0.1
+    _item_type.code               text
+     save_
+
+save__audit_conform.dict_name
+    _item_description.description
+;              The string identifying the highest-level dictionary defining
+               data names used in this file.
+;
+    _item.name                  '_audit_conform.dict_name'
+    _item.category_id             audit_conform
+    _item.mandatory_code          yes
+    _item_aliases.alias_name    '_audit_conform_dict_name'
+    _item_aliases.dictionary      cif_core.dic
+    _item_aliases.version         2.0.1
+    _item_type.code               text
+     save_
+
+save__audit_conform.dict_version
+    _item_description.description
+;              The version number of the dictionary to which the current
+               data block conforms.
+;
+    _item.name                  '_audit_conform.dict_version'
+    _item.category_id             audit_conform
+    _item.mandatory_code          yes
+    _item_aliases.alias_name    '_audit_conform_dict_version'
+    _item_aliases.dictionary      cif_core.dic
+    _item_aliases.version         2.0.1
+    _item_type.code               text
+     save_
+
+
+###  EOF mmcif_pdbx_vrpt-audit.dic
