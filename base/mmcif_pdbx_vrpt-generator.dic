@@ -1,0 +1,16 @@
+##
+# mmcif_pdbx_vrpt.dic (generator)
+##
+
+data_mmcif_pdbx_vrpt.dic
+#
+loop_
+_pdbx_include_dictionary.dictionary_id
+_pdbx_include_dictionary.dictionary_locator
+_pdbx_include_dictionary.include_mode
+_pdbx_include_dictionary.dictionary_namespace_prefix
+_pdbx_include_dictionary.dictionary_namespace_prefix_replace
+mmcif_pdbx_vrpt-header.dic        https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_pdbx_vrpt/main/base/mmcif_pdbx_vrpt-header.dic   extend . .
+mmcif_pdbx_vrpt-data.dic          https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_pdbx_vrpt/main/base/mmcif_pdbx_vrpt-data.dic     extend . .
+mmcif_pdbx_vrpt-def-core.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_pdbx_vrpt/main/base/mmcif_pdbx_vrpt-def-core.dic extend . .
+mmcif_pdbx_vrpt-data-ilg.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_pdbx_vrpt/main/base/mmcif_pdbx_vrpt-data-ilg.dic extend . .
