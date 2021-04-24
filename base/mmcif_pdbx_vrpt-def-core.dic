@@ -591,7 +591,7 @@ save__pdbx_vrpt_model_instance.entity_id
    _item_aliases.version     V6.00
    #
    _item_linked.child_name   "_pdbx_vrpt_model_instance.entity_id"
-   _item_linked.parent_name  "_pdbx_vrpt_entity.id"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
    #
 save_
 #
@@ -607,6 +607,9 @@ save__pdbx_vrpt_model_instance.label_asym_id
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_model_instance.label_asym_id"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
+   #   
    _item_aliases.alias_name  "_ModelledSubgroup.said"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -1049,7 +1052,7 @@ save__pdbx_vrpt_summary_entity_geometry.entity_id
    _item_aliases.version     V6.00
    #
    _item_linked.child_name   "_pdbx_vrpt_summary_entity_geometry.entity_id"
-   _item_linked.parent_name  "_pdbx_vrpt_entity.id"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
    #
 save_
 #
@@ -1065,6 +1068,9 @@ save__pdbx_vrpt_summary_entity_geometry.label_asym_id
    _item.mandatory_code  no
    #
    _item_type.code  code
+   #
+   _item_linked.child_name   "_pdbx_vrpt_summary_entity_geometry.label_asym_id"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
    #
    _item_aliases.alias_name  "_ModelledEntityInstance.said"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -6609,6 +6615,9 @@ save__pdbx_vrpt_most_violated_distance_restraints.ent_1
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_distance_restraints.ent_1"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
+   #
    _item_aliases.alias_name  "_most_violated_distance_restraint.ent_1"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -6628,6 +6637,9 @@ save__pdbx_vrpt_most_violated_distance_restraints.said_1
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_distance_restraints.said_1"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
+   #   
    _item_aliases.alias_name  "_most_violated_distance_restraint.said_1"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -6782,6 +6794,10 @@ save__pdbx_vrpt_most_violated_distance_restraints.said_2
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_distance_restraints.said_2"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
+   #   
+ 
    _item_aliases.alias_name  "_most_violated_distance_restraint.said_2"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -6800,6 +6816,9 @@ save__pdbx_vrpt_most_violated_distance_restraints.ent_2
    _item.mandatory_code  no
    #
    _item_type.code  code
+   #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_distance_restraints.ent_2"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
    #
    _item_aliases.alias_name  "_most_violated_distance_restraint.ent_2"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -7229,6 +7248,9 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.ent_1
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_dihedralangle_restraints.ent_1"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
+   #
    _item_aliases.alias_name  "_most_violated_dihedralangle_restraint.ent_1"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -7248,6 +7270,9 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.said_1
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_dihedralangle_restraints.said_1"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
+   #   
    _item_aliases.alias_name  "_most_violated_dihedralangle_restraint.said_1"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -7402,6 +7427,9 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.said_2
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_dihedralangle_restraints.said_2"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
+   #   
    _item_aliases.alias_name  "_most_violated_dihedralangle_restraint.said_2"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -7421,6 +7449,9 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.ent_2
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_dihedralangle_restraints.ent_2"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
+   #   
    _item_aliases.alias_name  "_most_violated_dihedralangle_restraint.ent_2"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -7627,6 +7658,9 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.ent_3
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_dihedralangle_restraints.ent_3"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
+   #   
    _item_aliases.alias_name  "_most_violated_dihedralangle_restraint.ent_3"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -7645,6 +7679,9 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.said_3
    _item.mandatory_code  no
    #
    _item_type.code  code
+   #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_dihedralangle_restraints.said_3"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
    #
    _item_aliases.alias_name  "_most_violated_dihedralangle_restraint.said_3"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -7801,6 +7838,9 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.ent_4
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_dihedralangle_restraints.ent_4"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
+   #   
    _item_aliases.alias_name  "_most_violated_dihedralangle_restraint.ent_4"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -7820,6 +7860,9 @@ save__pdbx_vrpt_most_violated_dihedralangle_restraints.said_4
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_most_violated_dihedralangle_restraints.said_4"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
+   #   
    _item_aliases.alias_name  "_most_violated_dihedralangle_restraint.said_4"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -10492,6 +10535,9 @@ save__pdbx_vrpt_percentile_entity_view.label_asym_id
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_percentile_entity_view.label_asym_id"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.label_asym_id"
+   #   
    _item_aliases.alias_name  "_PercentileEntityView.said"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
@@ -10531,12 +10577,12 @@ save__pdbx_vrpt_percentile_entity_view.entity_id
    #
    _item_type.code  code
    #
+   _item_linked.child_name   "_pdbx_vrpt_percentile_entity_view.entity_id"
+   _item_linked.parent_name  "_pdbx_vrpt_asym.entity_id"
+   #
    _item_aliases.alias_name  "_PercentileEntityView.ent"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
    _item_aliases.version     V6.00
-   #
-   _item_linked.child_name   "_pdbx_vrpt_percentile_entity_view.entity_id"
-   _item_linked.parent_name  "_pdbx_vrpt_entity.id"
    #
 save_
 #
