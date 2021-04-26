@@ -46,10 +46,10 @@ pdbx_vrpt_em_graph_fsc_indicator_curve     1  pdbx_vrpt_em_graph_fsc_indicator_c
 pdbx_vrpt_summary_entity_geometry          1  pdbx_vrpt_summary_entity_geometry:pdbx_vrpt_asym:1        . .
 
 
-pdbx_vrpt_violated_dihedral_restraints     1  pdbx_vrpt_violated_dihedral_restraints:pdbx_vrpt_model_instance:1 . .
-pdbx_vrpt_violated_dihedral_restraints     2  pdbx_vrpt_violated_dihedral_restraints:pdbx_vrpt_model_instance:2 . .
-pdbx_vrpt_violated_dihedral_restraints     3  pdbx_vrpt_violated_dihedral_restraints:pdbx_vrpt_model_instance:3 . .
-pdbx_vrpt_violated_dihedral_restraints     4  pdbx_vrpt_violated_dihedral_restraints:pdbx_vrpt_model_instance:4 . .
+pdbx_vrpt_violated_dihedralangle_restraints     1  pdbx_vrpt_violated_dihedralangle_restraints:pdbx_vrpt_model_instance:1 . .
+pdbx_vrpt_violated_dihedralangle_restraints     2  pdbx_vrpt_violated_dihedralangle_restraints:pdbx_vrpt_model_instance:2 . .
+pdbx_vrpt_violated_dihedralangle_restraints     3  pdbx_vrpt_violated_dihedralangle_restraints:pdbx_vrpt_model_instance:3 . .
+pdbx_vrpt_violated_dihedralangle_restraints     4  pdbx_vrpt_violated_dihedralangle_restraints:pdbx_vrpt_model_instance:4 . .
 
 pdbx_vrpt_violated_distance_restraints     1  pdbx_vrpt_violated_distance_restraints:pdbx_vrpt_model_instance:1 . .
 pdbx_vrpt_violated_distance_restraints     2  pdbx_vrpt_violated_distance_restraints:pdbx_vrpt_model_instance:2 . .
@@ -110,10 +110,10 @@ pdbx_vrpt_em_graph_fsc_indicator_curve     1  '_pdbx_vrpt_em_graph_fsc_indicator
 pdbx_vrpt_summary_entity_geometry          1  '_pdbx_vrpt_summary_entity_geometry.entity_id'            '_pdbx_vrpt_asym.entity_id'                  pdbx_vrpt_asym
 pdbx_vrpt_summary_entity_geometry          1  '_pdbx_vrpt_summary_entity_geometry.label_asym_id'        '_pdbx_vrpt_asym.label_asym_id'              pdbx_vrpt_asym
 
-pdbx_vrpt_violated_dihedral_restraints     1 '_pdbx_vrpt_violated_dihedral_restraints.instance_id_1'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
-pdbx_vrpt_violated_dihedral_restraints     2 '_pdbx_vrpt_violated_dihedral_restraints.instance_id_2'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
-pdbx_vrpt_violated_dihedral_restraints     3 '_pdbx_vrpt_violated_dihedral_restraints.instance_id_3'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
-pdbx_vrpt_violated_dihedral_restraints     4 '_pdbx_vrpt_violated_dihedral_restraints.instance_id_4'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
+pdbx_vrpt_violated_dihedralangle_restraints     1 '_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_1'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
+pdbx_vrpt_violated_dihedralangle_restraints     2 '_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_2'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
+pdbx_vrpt_violated_dihedralangle_restraints     3 '_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_3'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
+pdbx_vrpt_violated_dihedralangle_restraints     4 '_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_4'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
 
 pdbx_vrpt_violated_distance_restraints     1 '_pdbx_vrpt_violated_distance_restraints.instance_id_1'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
 pdbx_vrpt_violated_distance_restraints     2 '_pdbx_vrpt_violated_distance_restraints.instance_id_2'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance

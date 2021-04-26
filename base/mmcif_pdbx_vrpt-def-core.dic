@@ -5480,18 +5480,18 @@ save__pdbx_vrpt_distance_violation_model_restraints.ordinal
    #
 save_
 #
-##########################################
-# pdbx_vrpt_violated_dihedral_restraints #
-##########################################
-save_pdbx_vrpt_violated_dihedral_restraints
-   _category.id              pdbx_vrpt_violated_dihedral_restraints
+###############################################
+# pdbx_vrpt_violated_dihedralangle_restraints #
+###############################################
+save_pdbx_vrpt_violated_dihedralangle_restraints
+   _category.id              pdbx_vrpt_violated_dihedralangle_restraints
    _category.description     
 ;    Enumerated all dihedral-angle violations.
 ;
 
    _category.mandatory_code  no
    #
-   _category_key.name  "_pdbx_vrpt_violated_dihedral_restraints.ordinal"
+   _category_key.name  "_pdbx_vrpt_violated_dihedralangle_restraints.ordinal"
    #   
 loop_
    _category_group.id
@@ -5501,15 +5501,15 @@ loop_
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.atom_1
+save__pdbx_vrpt_violated_dihedralangle_restraints.atom_1
    _item_description.description  
 ;
             An label_atom_id name from cif item _atom_site.label_atom_id and _chem_comp_atom.atom_id.
 ;
 
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.atom_1"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.atom_1"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  no
    #
    _item_type.code  atcode
@@ -5520,15 +5520,15 @@ save__pdbx_vrpt_violated_dihedral_restraints.atom_1
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.atom_2
+save__pdbx_vrpt_violated_dihedralangle_restraints.atom_2
    _item_description.description  
 ;
             An label_atom_id name from cif item _atom_site.label_atom_id and _chem_comp_atom.atom_id.
 ;
 
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.atom_2"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.atom_2"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  no
    #
    _item_type.code  atcode
@@ -5539,15 +5539,15 @@ save__pdbx_vrpt_violated_dihedral_restraints.atom_2
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.violation
+save__pdbx_vrpt_violated_dihedralangle_restraints.violation
    _item_description.description  
 ;
          The measureed violation.
 ;
 
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.violation"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.violation"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  no
    #
    _item_type.code  float
@@ -5560,15 +5560,15 @@ save__pdbx_vrpt_violated_dihedral_restraints.violation
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.atom_3
+save__pdbx_vrpt_violated_dihedralangle_restraints.atom_3
    _item_description.description  
 ;
             An label_atom_id name from cif item _atom_site.label_atom_id and _chem_comp_atom.atom_id.
 ;
 
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.atom_3"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.atom_3"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  no
    #
    _item_type.code  atcode
@@ -5579,15 +5579,15 @@ save__pdbx_vrpt_violated_dihedral_restraints.atom_3
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.atom_4
+save__pdbx_vrpt_violated_dihedralangle_restraints.atom_4
    _item_description.description  
 ;
             An label_atom_id name from cif item _atom_site.label_atom_id and _chem_comp_atom.atom_id.
 ;
 
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.atom_4"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.atom_4"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  no
    #
    _item_type.code  atcode
@@ -5598,11 +5598,11 @@ save__pdbx_vrpt_violated_dihedral_restraints.atom_4
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.rlist_id
+save__pdbx_vrpt_violated_dihedralangle_restraints.rlist_id
    _item_description.description  "An identifier used to uniquely identify a particular restraints loop."
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.rlist_id"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.rlist_id"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  no
    #
    _item_type.code  int
@@ -5613,11 +5613,11 @@ save__pdbx_vrpt_violated_dihedral_restraints.rlist_id
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.rest_id
+save__pdbx_vrpt_violated_dihedralangle_restraints.rest_id
    _item_description.description  "An identifier used to uniquely identify a restraint with in a particular restraint loop."
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.rest_id"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.rest_id"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  no
    #
    _item_type.code  int
@@ -5628,67 +5628,67 @@ save__pdbx_vrpt_violated_dihedral_restraints.rest_id
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.instance_id_1
+save__pdbx_vrpt_violated_dihedralangle_restraints.instance_id_1
    _item_description.description  "A pointer to pdbx_vrpt_model_instance.id."
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.instance_id_1"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_1"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  yes
    #
    _item_type.code  code
    #
-   _item_linked.child_name   "_pdbx_vrpt_violated_dihedral_restraints.instance_id_1"
+   _item_linked.child_name   "_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_1"
    _item_linked.parent_name  "_pdbx_vrpt_model_instance.id"
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.instance_id_2
+save__pdbx_vrpt_violated_dihedralangle_restraints.instance_id_2
    _item_description.description  "A pointer to pdbx_vrpt_model_instance.id."
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.instance_id_2"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_2"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  yes
    #
    _item_type.code  code
    #
-   _item_linked.child_name   "_pdbx_vrpt_violated_dihedral_restraints.instance_id_2"
+   _item_linked.child_name   "_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_2"
    _item_linked.parent_name  "_pdbx_vrpt_model_instance.id"
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.instance_id_3
+save__pdbx_vrpt_violated_dihedralangle_restraints.instance_id_3
    _item_description.description  "A pointer to pdbx_vrpt_model_instance.id."
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.instance_id_3"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_3"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  yes
    #
    _item_type.code  code
    #
-   _item_linked.child_name   "_pdbx_vrpt_violated_dihedral_restraints.instance_id_3"
+   _item_linked.child_name   "_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_3"
    _item_linked.parent_name  "_pdbx_vrpt_model_instance.id"
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.instance_id_4
+save__pdbx_vrpt_violated_dihedralangle_restraints.instance_id_4
    _item_description.description  "A pointer to pdbx_vrpt_model_instance.id."
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.instance_id_4"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_4"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  yes
    #
    _item_type.code  code
    #
-   _item_linked.child_name   "_pdbx_vrpt_violated_dihedral_restraints.instance_id_4"
+   _item_linked.child_name   "_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_4"
    _item_linked.parent_name  "_pdbx_vrpt_model_instance.id"
    #
 save_
 #
-save__pdbx_vrpt_violated_dihedral_restraints.ordinal
+save__pdbx_vrpt_violated_dihedralangle_restraints.ordinal
    _item_description.description  "Uniquely identifies each dihedral angle restraint."
    #
-   _item.name            "_pdbx_vrpt_violated_dihedral_restraints.ordinal"
-   _item.category_id     pdbx_vrpt_violated_dihedral_restraints
+   _item.name            "_pdbx_vrpt_violated_dihedralangle_restraints.ordinal"
+   _item.category_id     pdbx_vrpt_violated_dihedralangle_restraints
    _item.mandatory_code  yes
    #
    _item_type.code  int
