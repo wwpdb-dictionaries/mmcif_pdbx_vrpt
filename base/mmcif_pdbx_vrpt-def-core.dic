@@ -5874,6 +5874,9 @@ save__pdbx_vrpt_dihedralangle_violations_summary.restraint_type
    _item_enumeration.detail
       PHI   .
       PSI   .
+      CHI1  .
+      CHI2  .
+      CHI21 .
       Total . 
    #
    _item_aliases.alias_name  "_dihedralangle_violation_summary.restraint_type"
@@ -6212,6 +6215,9 @@ save__pdbx_vrpt_dihedralangle_violation_model.ang_rest_type
    _item_enumeration.detail
       PHI   .
       PSI   .
+      CHI1  .
+      CHI2  .
+      CHI21 .
       Total . 
    #
    _item_aliases.alias_name  "_ang_rest_types.ang_rest_type"
@@ -6361,6 +6367,9 @@ save__pdbx_vrpt_dihedralangle_ensemble_violation.ang_rest_type
    _item_enumeration.detail
       PHI   .
       PSI   .
+      CHI1  .
+      CHI2  .
+      CHI21 .
       Total . 
     #
    _item_aliases.alias_name  "_ang_rest_types.ang_rest_type"
