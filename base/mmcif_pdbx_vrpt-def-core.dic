@@ -5061,11 +5061,13 @@ save__pdbx_vrpt_distance_violation_summary.restraint_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail
+      DisulfideBond .
+      HydrogenBond  .
+      InterChain    .
       Intra-residue .
-      Sequential    .
       MediumRange   .
       LongRange     .
-      InterChain    .
+      Sequential    .
       Total         .
    #   
 
