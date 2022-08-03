@@ -12,7 +12,7 @@ _datablock.description  "wwPDB Validation Report extension dictionary"
 #
 _dictionary.title         mmcif_pdbx_vrpt.dic
 _dictionary.datablock_id  mmcif_pdbx_vrpt.dic
-_dictionary.version       0.063
+_dictionary.version       0.064
 #
 loop_
 _dictionary_history.version   
@@ -33,6 +33,19 @@ _dictionary_history.revision
 ; Changes (ep):
   + Add "DisulfideBond" and "HydrogenBond" to
      _pdbx_vrpt_distance_violation_summary enumeration
+;
+  0.064 2022-07-20
+; Changes (ep):
+  + Addition of Q-score data
+    Add _pdbx_vrpt_summary_em.Q_score
+    Add pdbx_vrpt_summary_entity_fit_to_map category
+    Mark _pdbx_vrpt_summary_entity_geometry.average_residue_inclusion as deprecated
+      and replaced by _pdbx_vrpt_summary_entity_fit_to_map.average_residue_inclusion
+    Add pdbx_vrpt_model_instance_map_fitting category
+    Mark pdbx_vrpt_model_instance_density as deprecated and replaced
+      by pdbx_vrpt_model_instance_map_fitting
+    Mark _pdbx_vrpt_model_instance_geometry.residue_inclusion deprecated and replaced by
+      _pdbx_vrpt_model_instance_map_fitting.residue_inclusion
 ;
   
 

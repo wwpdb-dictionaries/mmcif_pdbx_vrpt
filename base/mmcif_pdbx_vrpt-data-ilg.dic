@@ -23,6 +23,7 @@ pdbx_vrpt_model_instance                   1  pdbx_vrpt_model_instance:pdbx_vrpt
 
 pdbx_vrpt_model_instance_geometry          1  pdbx_vrpt_model_instance_geometry:pdbx_vrpt_model_instance:1      . .
 pdbx_vrpt_model_instance_density           1  pdbx_vrpt_model_instance_density:pdbx_vrpt_model_instance:1      . .
+pdbx_vrpt_model_instance_map_fitting       1  pdbx_vrpt_model_instance_map_fitting:pdbx_vrpt_model_instance:1      . .
 
 pdbx_vrpt_most_violated_dihedralangle_restraints  1 _pdbx_vrpt_most_violated_dihedralangle_restraints:pdbx_vrpt_asym:1    . .
 pdbx_vrpt_most_violated_dihedralangle_restraints  2 _pdbx_vrpt_most_violated_dihedralangle_restraints:pdbx_vrpt_asym:2    . .
@@ -45,6 +46,7 @@ pdbx_vrpt_em_graph_fsc_indicator_curve     1  pdbx_vrpt_em_graph_fsc_indicator_c
 
 pdbx_vrpt_summary_entity_geometry          1  pdbx_vrpt_summary_entity_geometry:pdbx_vrpt_asym:1        . .
 
+pdbx_vrpt_summary_entity_fit_to_map        1 pdbx_vrpt_summary_entity_fit_to_map:pdbx_vrpt_asym:1       . .
 
 pdbx_vrpt_violated_dihedralangle_restraints     1  pdbx_vrpt_violated_dihedralangle_restraints:pdbx_vrpt_model_instance:1 . .
 pdbx_vrpt_violated_dihedralangle_restraints     2  pdbx_vrpt_violated_dihedralangle_restraints:pdbx_vrpt_model_instance:2 . .
@@ -80,6 +82,7 @@ pdbx_vrpt_model_instance                   1  '_pdbx_vrpt_model_instance.label_a
 
 pdbx_vrpt_model_instance_geometry          1  '_pdbx_vrpt_model_instance_geometry.instance_id'          '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
 pdbx_vrpt_model_instance_density           1  '_pdbx_vrpt_model_instance_density.instance_id'           '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
+pdbx_vrpt_model_instance_map_fitting       1  '_pdbx_vrpt_model_instance_map_fitting.instance_id'       '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
 
 pdbx_vrpt_most_violated_dihedralangle_restraints  1 '_pdbx_vrpt_most_violated_dihedralangle_restraints.said_1'   '_pdbx_vrpt_asym.label_asym_id'      pdbx_vrpt_asym
 pdbx_vrpt_most_violated_dihedralangle_restraints  1 '_pdbx_vrpt_most_violated_dihedralangle_restraints.ent_1'    '_pdbx_vrpt_asym.entity_id'          pdbx_vrpt_asym
@@ -107,8 +110,12 @@ pdbx_vrpt_em_2d_graph_data                 1  '_pdbx_vrpt_em_2d_graph_data.graph
 pdbx_vrpt_em_graph_atom_inclusion          1  '_pdbx_vrpt_em_graph_atom_inclusion.graph_id'             '_pdbx_vrpt_em_2d_graph_info.graph_id'       pdbx_vrpt_em_2d_graph_info
 pdbx_vrpt_em_graph_fsc_curve               1  '_pdbx_vrpt_em_graph_fsc_curve.graph_id'                  '_pdbx_vrpt_em_2d_graph_info.graph_id'       pdbx_vrpt_em_2d_graph_info
 pdbx_vrpt_em_graph_fsc_indicator_curve     1  '_pdbx_vrpt_em_graph_fsc_indicator_curve.graph_id'        '_pdbx_vrpt_em_2d_graph_info.graph_id'       pdbx_vrpt_em_2d_graph_info
+
 pdbx_vrpt_summary_entity_geometry          1  '_pdbx_vrpt_summary_entity_geometry.entity_id'            '_pdbx_vrpt_asym.entity_id'                  pdbx_vrpt_asym
 pdbx_vrpt_summary_entity_geometry          1  '_pdbx_vrpt_summary_entity_geometry.label_asym_id'        '_pdbx_vrpt_asym.label_asym_id'              pdbx_vrpt_asym
+
+pdbx_vrpt_summary_entity_fit_to_map        1  '_pdbx_vrpt_summary_entity_fit_to_map.entity_id'          '_pdbx_vrpt_asym.entity_id'                  pdbx_vrpt_asym
+pdbx_vrpt_summary_entity_fit_to_map        1  '_pdbx_vrpt_summary_entity_fit_to_map.label_asym_id'      '_pdbx_vrpt_asym.label_asym_id'              pdbx_vrpt_asym
 
 pdbx_vrpt_violated_dihedralangle_restraints     1 '_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_1'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
 pdbx_vrpt_violated_dihedralangle_restraints     2 '_pdbx_vrpt_violated_dihedralangle_restraints.instance_id_2'    '_pdbx_vrpt_model_instance.id'               pdbx_vrpt_model_instance
