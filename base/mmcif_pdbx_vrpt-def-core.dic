@@ -8667,7 +8667,7 @@ save_
 ####################################
 save_pdbx_vrpt_model_instance_density
    _category.id              pdbx_vrpt_model_instance_density
-   _category.description     '            This category provides information on X-ray density analysis of a residue. It is not DEPRECATED'
+   _category.description     '            This category provides information on X-ray density analysis of a residue. It is now DEPRECATED'
    _category.mandatory_code  no
    #
    _category_key.name  "_pdbx_vrpt_model_instance_density.ordinal"
@@ -8842,6 +8842,45 @@ save__pdbx_vrpt_model_instance_density.ordinal
    #
 save_
 #
+save__pdbx_vrpt_model_instance_density.EDIAm
+   _item_description.description  
+;
+            The EDIAm score aggregates the electron density support
+            for individual atoms (EDIA score) within a residue,
+            evaluating the overall electron density fit for the
+            residue.  A residue with an EDIAm below 0.8 suggests that
+            its constituent atoms display increasing inconsistency
+            with the electron density, and should be visually
+            inspected.
+;
+
+   #
+   _item.name            "_pdbx_vrpt_model_instance_density.EDIAm"
+   _item.category_id     pdbx_vrpt_model_instance_density
+   _item.mandatory_code  no
+   #
+   _item_type.code  float
+save_
+#
+save__pdbx_vrpt_model_instance_density.OPIA
+   _item_description.description  
+;
+            Overall Percentage of well-resolved Interconnected Atoms
+            score indicates the percentage of atoms within a residue
+            where the EDIA score exceeds 0.8. A value below 50%
+            suggests less than half of the atoms in the residue lack
+            good electron density support and should be visually
+            inspected.
+;
+
+   #
+   _item.name            "_pdbx_vrpt_model_instance_density.OPIA"
+   _item.category_id     pdbx_vrpt_model_instance_density
+   _item.mandatory_code  no
+   #
+   _item_type.code  float
+save_
+
 
 ########################################
 # pdbx_vrpt_model_instance_map_fitting #
@@ -9755,6 +9794,28 @@ save__pdbx_vrpt_summary_diffraction.Q_score
    _item.mandatory_code  no
    #
    _item_type.code  float
+   #
+save_
+#
+save__pdbx_vrpt_summary_diffraction.density_fitness_version
+   _item_description.description  "The version of density-fitness suite programs used in the analysis."
+   #
+   _item.name            "_pdbx_vrpt_summary_diffraction.density_fitness_version"
+   _item.category_id     pdbx_vrpt_summary_diffraction
+   _item.mandatory_code  yes
+   #
+   _item_type.code  line
+   #
+save_
+#
+save__pdbx_vrpt_summary_diffraction.servalcat_version
+   _item_description.description  "The version of Servalcat program used in the analysis."
+   #
+   _item.name            "_pdbx_vrpt_summary_diffraction.servalcat_version"
+   _item.category_id     pdbx_vrpt_summary_diffraction
+   _item.mandatory_code  yes
+   #
+   _item_type.code  line
    #
 save_
 #

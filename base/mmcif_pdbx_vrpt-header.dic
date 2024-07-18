@@ -12,7 +12,7 @@ _datablock.description  "wwPDB Validation Report extension dictionary"
 #
 _dictionary.title         mmcif_pdbx_vrpt.dic
 _dictionary.datablock_id  mmcif_pdbx_vrpt.dic
-_dictionary.version       0.064
+_dictionary.version       0.065
 #
 loop_
 _dictionary_history.version   
@@ -46,6 +46,10 @@ _dictionary_history.revision
       by pdbx_vrpt_model_instance_map_fitting
     Mark _pdbx_vrpt_model_instance_geometry.residue_inclusion deprecated and replaced by
       _pdbx_vrpt_model_instance_map_fitting.residue_inclusion
+;
+  0.065 2024-07-18
+; Changes (ep):
+  + Add _pdbx_vrpt_model_instance_density.OPIA and _pdbx_vrpt_model_instance_density.EDIAm.
 ;
   
 
