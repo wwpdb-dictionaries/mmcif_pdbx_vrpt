@@ -9802,7 +9802,18 @@ save__pdbx_vrpt_summary_diffraction.density_fitness_version
    #
    _item.name            "_pdbx_vrpt_summary_diffraction.density_fitness_version"
    _item.category_id     pdbx_vrpt_summary_diffraction
-   _item.mandatory_code  yes
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
+   #
+save_
+#
+save__pdbx_vrpt_summary_diffraction.CCP4_version
+   _item_description.description  "The version of CCP4 suite used in the analysis."
+   #
+   _item.name            "_pdbx_vrpt_summary_diffraction.CCP4_version"
+   _item.category_id     pdbx_vrpt_summary_diffraction
+   _item.mandatory_code  no
    #
    _item_type.code  line
    #
@@ -9813,7 +9824,7 @@ save__pdbx_vrpt_summary_diffraction.servalcat_version
    #
    _item.name            "_pdbx_vrpt_summary_diffraction.servalcat_version"
    _item.category_id     pdbx_vrpt_summary_diffraction
-   _item.mandatory_code  yes
+   _item.mandatory_code  no
    #
    _item_type.code  line
    #

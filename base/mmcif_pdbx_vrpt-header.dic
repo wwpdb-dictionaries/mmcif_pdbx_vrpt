@@ -12,7 +12,7 @@ _datablock.description  "wwPDB Validation Report extension dictionary"
 #
 _dictionary.title         mmcif_pdbx_vrpt.dic
 _dictionary.datablock_id  mmcif_pdbx_vrpt.dic
-_dictionary.version       0.065
+_dictionary.version       0.066
 #
 loop_
 _dictionary_history.version   
@@ -50,7 +50,11 @@ _dictionary_history.revision
   0.065 2024-07-18
 ; Changes (ep):
   + Add _pdbx_vrpt_model_instance_density.OPIA and _pdbx_vrpt_model_instance_density.EDIAm.
+  + Add _pdbx_vrpt_summary_diffraction.density_fitness_version and _pdbx_vrpt_summary_diffraction.servalcat_version
 ;
-  
+  0.066 2024-07-23
+; Changes (ep):
+  + _pdbx_vrpt_summary_diffraction.CCP4_version
+;
 
 ###  EOF  mmcif_pdbx_vrpt-header.dic
