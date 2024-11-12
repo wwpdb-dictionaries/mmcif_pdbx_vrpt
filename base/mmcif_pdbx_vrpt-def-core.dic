@@ -9830,6 +9830,17 @@ save__pdbx_vrpt_summary_diffraction.servalcat_version
    #
 save_
 #
+save__pdbx_vrpt_summary_diffraction.EDS_R_warning
+   _item_description.description  "Warning message when EDS calculated R vs reported R is higher than a threshold"
+   #
+   _item.name            "_pdbx_vrpt_summary_diffraction.EDS_R_warning"
+   _item.category_id     pdbx_vrpt_summary_diffraction
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
+   #
+save_
+#
 ##############################
 # pdbx_vrpt_summary_geometry #
 ##############################
