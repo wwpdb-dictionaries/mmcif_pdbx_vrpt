@@ -2350,7 +2350,7 @@ save__pdbx_vrpt_chemical_shift_outlier.prediction
    _item.category_id     pdbx_vrpt_chemical_shift_outlier
    _item.mandatory_code  no
    #
-   _item_type.code  float
+   _item_type.code  line
    #
    _item_aliases.alias_name  "_chemical_shift_outlier.prediction"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -4875,7 +4875,7 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.atoms
    _item.category_id     pdbx_vrpt_instance_mogul_ring_outliers
    _item.mandatory_code  no
    #
-   _item_type.code  alphanum-csv
+   _item_type.code  atcode
    _item_examples.case       O5,C1,C2
    #
    _item_aliases.alias_name  "_mog-ring-outlier.atoms"
@@ -6015,9 +6015,27 @@ save__pdbx_vrpt_dihedralangle_violations_summary.restraint_type
    _item_enumeration.detail
       PHI   .
       PSI   .
+      CHI   .
       CHI1  .
       CHI2  .
       CHI21 .
+      CHI22 .      
+      CHI3    .
+      CHI4    .
+      ALPHA   .
+      BETA    .
+      GAMMA   .
+      DELTA   .
+      OMEGA   .
+      EPSILON .
+      ZETA    .
+      NU0     .
+      NU1     .
+      NU2     .
+      NU3     .
+      NU4     .
+      VEANgle .
+      UNNAMED .
       Total . 
    #
    _item_aliases.alias_name  "_dihedralangle_violation_summary.restraint_type"
@@ -6354,12 +6372,30 @@ save__pdbx_vrpt_dihedralangle_violation_model.ang_rest_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-      PHI   .
-      PSI   .
-      CHI1  .
-      CHI2  .
-      CHI21 .
-      Total . 
+      PHI     .
+      PSI     .
+      CHI   .
+      CHI1    .
+      CHI2    .
+      CHI3    .
+      CHI4    .
+      CHI21   .
+      CHI22 .      
+      ALPHA   .
+      BETA    .
+      GAMMA   .
+      DELTA   .
+      OMEGA   .
+      EPSILON .
+      ZETA    .
+      NU0     .
+      NU1     .
+      NU2     .
+      NU3     .
+      NU4     .
+      VEANgle .
+      UNNAMED .
+      Total   . 
    #
    _item_aliases.alias_name  "_ang_rest_types.ang_rest_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
@@ -6508,10 +6544,28 @@ save__pdbx_vrpt_dihedralangle_ensemble_violation.ang_rest_type
    _item_enumeration.detail
       PHI   .
       PSI   .
+      CHI   .
       CHI1  .
       CHI2  .
+      CHI3    .
+      CHI4    .
       CHI21 .
-      Total . 
+      CHI22 .
+      ALPHA   .
+      BETA    .
+      GAMMA   .
+      DELTA   .
+      OMEGA   .
+      EPSILON .
+      ZETA    .
+      NU0     .
+      NU1     .
+      NU2     .
+      NU3     .
+      NU4     .
+      VEANgle .
+      UNNAMED .
+      Total   . 
     #
    _item_aliases.alias_name  "_ang_rest_types.ang_rest_type"
    _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
