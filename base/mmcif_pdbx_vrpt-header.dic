@@ -12,7 +12,7 @@ _datablock.description  "wwPDB Validation Report extension dictionary"
 #
 _dictionary.title         mmcif_pdbx_vrpt.dic
 _dictionary.datablock_id  mmcif_pdbx_vrpt.dic
-_dictionary.version       0.068
+_dictionary.version       0.069
 #
 loop_
 _dictionary_history.version   
@@ -68,6 +68,11 @@ _dictionary_history.revision
   + Update enumerations for pdbx_vrpt_dihedralangle_violations_summary.restraint_type,
     _pdbx_vrpt_dihedralangle_violation_model.ang_rest_type,
     _pdbx_vrpt_dihedralangle_ensemble_violation.ang_rest_type,
+;
+  0.069 2025-04-20
+; Changes (ep):
+  + Add categories _entity, _struct_asym, _entry
+  + Add _pdbx_vrpt_summary.extended_entry_id, _pdbx_vrpt_database.extended_code
 ;
 
 ###  EOF  mmcif_pdbx_vrpt-header.dic

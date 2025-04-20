@@ -7,6 +7,192 @@
 ###########################################################################
 data_mmcif_pdbx_vrpt-def-core.dic
 
+#########
+# entry #
+#########
+
+save_entry
+    _category.description
+;              There is only one item in the ENTRY category, _entry.id. This
+               data item gives a name to this entry and is indirectly a key to
+               the categories (such as CELL, GEOM, EXPTL) that describe
+               information pertinent to the entire data block.
+;
+    _category.id                  entry
+    _category.mandatory_code      no
+    _category_key.name          '_entry.id'
+    loop_
+    _category_group.id           'inclusive_group'
+#                                 'entry_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on PDB entry 5HVP and laboratory records for the
+                structure corresponding to PDB entry 5HVP.
+;
+;
+    _entry.id                              '5HVP'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 2 - based on data set TOZ of Willis, Beckwith & Tozer
+                [Acta Cryst. (1991), C47, 2276-2277].
+;
+;
+    _entry.id                              'TOZ'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__entry.id
+    _item_description.description
+;              The value of _entry.id identifies the data block.
+
+               Note that this item need not be a number; it can be any unique
+               identifier.
+;
+    _item.name               '_entry.id'
+    _item.category_id        entry
+    _item.mandatory_code     yes
+    _item_type.code          code
+     save_
+
+##########
+# entity #
+##########
+
+save_entity
+    _category.description
+;              Data items in the ENTITY category record details (such as
+               chemical composition, name and source) about the molecular
+               entities that are present in the crystallographic structure.
+
+               Items in the various ENTITY subcategories provide a full
+               chemical description of these molecular entities.
+
+               Entities are of three types:  polymer, non-polymer and water.
+               Note that the water category includes only water;  ordered
+               solvent such as sulfate ion or acetone would be described as
+               individual non-polymer entities.
+
+               The ENTITY category is specific to macromolecular CIF
+               applications and replaces the function of the CHEMICAL category
+               in the CIF core.
+
+
+               It is also important to remember that entities do not correspond
+               directly to the enumeration of the contents of the asymmetric
+               unit. Entities are described only once, even in those structures
+               that contain multiple observations of an entity. The
+               STRUCT_ASYM data items, which reference the entity list,
+               describe and label the contents of the asymmetric unit.
+;
+    _category.id                  entity
+    _category.mandatory_code      no
+    _category_key.name          '_entity.id'
+    loop_
+    _category_group.id           'inclusive_group'
+#                                 'entity_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+    loop_
+    _entity.id
+     1
+     2
+;
+     save_
+
+
+
+save__entity.id
+    _item_description.description
+;              The value of _entity.id must uniquely identify a record in the
+               ENTITY list.
+
+               Note that this item need not be a number; it can be any unique
+               identifier.
+;
+    loop_
+    _item.name             '_entity_id'
+    _item.category_id      entity
+    _item.mandatory_code   yes
+    _item_type.code               code
+
+     save_
+
+###############
+# struct_asym #
+###############
+
+save_struct_asym
+    _category.description
+;              Data items in the STRUCT_ASYM category record details about the
+               structural elements in the asymmetric unit.
+;
+    _category.id                  struct_asym
+    _category.mandatory_code      no
+    _category_key.name          '_struct_asym.id'
+    loop_
+    _category_group.id           'inclusive_group'
+#                                 'struct_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+    loop_
+    _struct_asym.id
+    _struct_asym.entity_id
+      A  1
+      B  1
+      C  2
+      D  2
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__struct_asym.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                  '_struct_asym.entity_id'
+    _item.category_id             struct_asym
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__struct_asym.id
+    _item_description.description
+;              The value of _struct_asym.id must uniquely identify a record in
+               the STRUCT_ASYM list.
+
+               Note that this item need not be a number; it can be any unique
+               identifier.
+;
+    _item.name                 '_struct_asym.id'
+    _item.category_id            struct_asym
+    _item.mandatory_code         yes
+    _item_type.code               code
+    loop_
+    _item_examples.case          '1'
+                                 'A'
+                                 '2B3'
+    _item_linked.child_name      '_struct_asym.entity_id'
+    _item_linked.parent_name     '_entity.id'
+    save_
+
 #####################
 # pdbx_vrpt_summary #
 #####################
@@ -36,6 +222,16 @@ save__pdbx_vrpt_summary.entry_id
    _item.name            "_pdbx_vrpt_summary.entry_id"
    _item.category_id     pdbx_vrpt_summary
    _item.mandatory_code  yes
+   #
+   _item_type.code  code
+save_
+#
+save__pdbx_vrpt_summary.extended_entry_id
+   _item_description.description  "pdbx_vrpt_summary extended accesion code"
+   #
+   _item.name            "_pdbx_vrpt_summary.extended_entry_id"
+   _item.category_id     pdbx_vrpt_summary
+   _item.mandatory_code  no
    #
    _item_type.code  code
 save_
@@ -11196,6 +11392,17 @@ save__pdbx_vrpt_database.id
    _item.mandatory_code  yes
    #
    _item_type.code  code
+   #
+save_
+#
+save__pdbx_vrpt_database.extended_code
+   _item_description.description  "Extended accession code"
+   #
+   _item.name            "_pdbx_vrpt_database.extended_code"
+   _item.category_id     pdbx_vrpt_database
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
    #
 save_
 #
