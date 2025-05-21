@@ -128,6 +128,236 @@ save__entity.id
 
      save_
 
+
+save__entity.type
+   _item_description.description  
+;              Defines the type of the entity.
+
+               Polymer entities are expected to have corresponding
+               ENTITY_POLY and associated entries.
+
+               Non-polymer entities are expected to have corresponding
+               CHEM_COMP and associated entries.
+
+               Water entities are not expected to have corresponding
+               entries in the ENTITY category.
+;
+
+   #
+   _item.name            "_entity.type"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   _item_type.code  ucode
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     polymer      "entity is a polymer"  
+     non-polymer  "entity is not a polymer"  
+     macrolide    "entity is a macrolide"  
+     water        "water in the solvent model"  
+     branched     "entity is branched"  
+   #
+   loop_
+   _pdbx_item_enumeration.name
+   _pdbx_item_enumeration.value
+   _pdbx_item_enumeration.detail
+     "_entity.type"  macrolide    .  
+     "_entity.type"  non-polymer  .  
+     "_entity.type"  polymer      .  
+     "_entity.type"  branched     .  
+     "_entity.type"  water        .  
+   #
+save_
+
+save__entity.src_method
+   _item_description.description  
+;              The method by which the sample for the entity was produced.
+               Entities isolated directly from natural sources (tissues, soil
+               samples etc.) are expected to have further information in the
+               ENTITY_SRC_NAT category. Entities isolated from genetically
+               manipulated sources are expected to have further information in
+               the ENTITY_SRC_GEN category.
+;
+
+   #
+   _item.name            "_entity.src_method"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   _item_type.code  ucode
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     nat  "                                 entity isolated from a natural source"  
+     man  
+;                                 entity isolated from a genetically
+                                  manipulated source
+;
+  
+     syn  "                                 entity obtained synthetically"  
+   #
+   _pdbx_item_description.name         "_entity.src_method"
+   _pdbx_item_description.description  "The method by which the sample for the entity was produced"
+   #
+   loop_
+   _pdbx_item_enumeration.name
+   _pdbx_item_enumeration.value
+   _pdbx_item_enumeration.detail
+     "_entity.src_method"  man  .  
+     "_entity.src_method"  nat  .  
+     "_entity.src_method"  syn  .  
+   #
+save_
+
+save__entity.pdbx_description
+   _item_description.description  
+;              A description of the entity.
+
+               Corresponds to the compound name in the PDB format.
+;
+
+   #
+   _item.name            "_entity.pdbx_description"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   _pdbx_item.name            "_entity.pdbx_description"
+   _pdbx_item.mandatory_code  yes
+   #
+   _item_type.code  line
+   #
+   loop_
+   _item_examples.case
+     "DNA (5'-D(*GP*(CH3)CP*GP*(CH3)CP*GP*C)-3')"  
+     PROFLAVINE  
+     "PROTEIN (DEOXYRIBONUCLEASE I (E.C.3.1.21.1))"  
+   #
+   _item_aliases.alias_name  "_entity.ndb_description"
+   _item_aliases.dictionary  cif_rcsb.dic
+   _item_aliases.version     1.1
+   #
+   _pdbx_item_examples.name    "_entity.pdbx_description"
+   _pdbx_item_examples.case    "Green fluorescent protein"
+   _pdbx_item_examples.detail  .
+   #
+save_
+
+save__entity.formula_weight
+   _item_description.description  "              Formula mass in daltons of the entity."
+   #
+   _item.name            "_entity.formula_weight"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   loop_
+   _item_range.maximum
+   _item_range.minimum
+       .  1.0  
+     1.0  1.0  
+   #
+   _item_type.code  float
+   #
+save_
+
+save__entity.pdbx_number_of_molecules
+   _item_description.description  
+;              A place holder for the number of molecules of the entity in
+               the entry.
+;
+
+   #
+   _item.name            "_entity.pdbx_number_of_molecules"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   _item_type.code  int
+   #
+   loop_
+   _item_examples.case
+     1  
+     2  
+     3  
+   #
+   _item_aliases.alias_name  "_entity.ndb_number_of_molecules"
+   _item_aliases.dictionary  cif_rcsb.dic
+   _item_aliases.version     1.1
+   #
+save_
+#
+save__entity.pdbx_ec
+   _item_description.description  "             Enzyme Commission (EC) number(s)"
+   #
+   _item.name            "_entity.pdbx_ec"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   _item_type.code  ec-type
+   #
+   _item_examples.case  2.7.7.7
+   #
+   #
+#   _item_related.related_name   "_entity_keywords.pdbx_ec"
+#   _item_related.function_code  replaces
+   #
+save_
+
+save__entity.pdbx_mutation
+   _item_description.description  "              Details about any entity mutation(s)."
+   #
+   _item.name            "_entity.pdbx_mutation"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
+   #
+   loop_
+   _item_examples.case
+     Y31H          
+     DEL(298-323)  
+   #
+   #
+#   _item_related.related_name   "_entity_keywords.pdbx_mutation"
+#   _item_related.function_code  replaces
+   #
+save_
+#
+save__entity.pdbx_fragment
+   _item_description.description  "              Entity fragment description(s)."
+   #
+   _item.name            "_entity.pdbx_fragment"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
+   #
+   loop_
+   _item_examples.case
+     "KLENOW FRAGMENT"  
+     "REPLICASE OPERATOR HAIRPIN"  
+     "C-TERMINAL DOMAIN"  
+   #
+#   _item_related.related_name   "_entity_keywords.pdbx_fragment"
+#   _item_related.function_code  replaces
+   #
+save_
+
+save__entity.details
+   _item_description.description  "              A description of special aspects of the entity."
+   #
+   _item.name            "_entity.details"
+   _item.category_id     entity
+   _item.mandatory_code  no
+   #
+   _item_type.code  text
+   #
+   _pdbx_item_description.name         "_entity.details"
+   _pdbx_item_description.description  "Provide any special information about your construct here (for example, fusion protein arrangement, deletions, etc.)"
+   #
+save_
+
 ###############
 # struct_asym #
 ###############
@@ -192,6 +422,75 @@ save__struct_asym.id
     _item_linked.child_name      '_struct_asym.entity_id'
     _item_linked.parent_name     '_entity.id'
     save_
+
+save__struct_asym.pdbx_modified
+   _item_description.description  "        This data item indicates whether the structural elements are modified."
+   #
+   _item.name            "_struct_asym.pdbx_modified"
+   _item.category_id     struct_asym
+   _item.mandatory_code  no
+   #
+   _item_type.code  text
+   #
+   _item_examples.case  y
+   #
+   _item_aliases.alias_name  "_struct_asym.ndb_modified"
+   _item_aliases.dictionary  cif_rcsb.dic
+   _item_aliases.version     1.1
+   #
+save_
+#
+save__struct_asym.pdbx_blank_PDB_chainid_flag
+   _item_description.description  
+;              A flag indicating that this entity was originally labeled
+               with a blank PDB chain id.
+;
+
+   #
+   _item.name            "_struct_asym.pdbx_blank_PDB_chainid_flag"
+   _item.category_id     struct_asym
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  Yes  
+     N  No   
+   #
+   _item_aliases.alias_name  "_struct_asym.rcsb_blank_PDB_chainid_flag"
+   _item_aliases.dictionary  cif_rcsb.dic
+   _item_aliases.version     1.1
+   #
+save_
+#
+save__struct_asym.details
+   _item_description.description  
+;              A description of special aspects of this portion of the contents
+               of the asymmetric unit.
+;
+
+   #
+   _item.name            "_struct_asym.details"
+   _item.category_id     struct_asym
+   _item.mandatory_code  no
+   #
+   _item_type.code  text
+   #
+   _item_examples.case  
+;                                 The drug binds to this enzyme in two roughly
+                                  twofold symmetric modes. Hence this
+                                  biological unit (3) is roughly twofold
+                                  symmetric to biological unit (2). Disorder in
+                                  the protein chain indicated with alternative
+                                  ID 2 should be used with this biological unit.
+;
+
+   #
+save_
+#
+
 
 #####################
 # pdbx_vrpt_summary #

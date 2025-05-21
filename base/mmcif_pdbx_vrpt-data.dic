@@ -100,6 +100,11 @@ data_mmcif_pdbx_vrpt-data.dic
                '[A-Za-z0-9]+(,[A-Za-z0-9]+){0,}'
 ;              comma separated alpha numeric codes (single words)  (case sensitive) ...
 ;
+ec-type                   char   "([1-7]((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?[0-9]?)|(.-)))(([ ]*,[ ]*)([1-7]((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?[0-9]?)|(.-))))*"  
+;
+               Approximate format of Enzyme Commission EC number. 1.2.3.4 with
+               optional parts.
+;
 
 #####################
 ## ITEM_UNITS_LIST ##
