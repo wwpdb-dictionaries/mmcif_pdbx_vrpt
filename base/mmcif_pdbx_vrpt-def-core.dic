@@ -11394,11 +11394,12 @@ loop_
    _item_enumeration.value
    _item_enumeration.detail
      all_atom_clashscore           .  
+     q_relative                    .
      Ramachandran_outlier_percent  .  
      rotamer_outliers_percent      .  
      R_value_R_free                .  
      RSRZ_outliers_percent         .  
-     RNAsuiteness_percent          .  
+     RNAsuiteness_percent          .
    #
 save_
 #
