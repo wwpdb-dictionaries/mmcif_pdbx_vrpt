@@ -5,7 +5,7 @@ _datablock.description  "wwPDB Validation Report extension dictionary"
 #
 _dictionary.title         mmcif_pdbx_vrpt.dic
 _dictionary.datablock_id  mmcif_pdbx_vrpt.dic
-_dictionary.version       0.071
+_dictionary.version       0.072
 #
 loop_
 _dictionary_history.version
@@ -89,6 +89,11 @@ _dictionary_history.revision
 0.071  2025-07-28  
 ; Changes (ep):
   + Add q_relative to _pdbx_vrpt_percentile_type.type enumeration
+;
+  
+0.072  2026-11-16  
+; Changes (ep):
+  + Add _pdbx_vrpt_instance_mogul_ring_outliers.local_density.
 ;
   
 #
@@ -5308,6 +5313,33 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.instance_id
    #
    _item_linked.child_name   "_pdbx_vrpt_instance_mogul_ring_outliers.instance_id"
    _item_linked.parent_name  "_pdbx_vrpt_model_instance.id"
+   #
+save_
+#
+save__pdbx_vrpt_instance_mogul_ring_outliers.local_density
+   _item_description.description  
+;
+            The local density is the percentage of observed Mogul ring angles
+	    within certain units of the query torsion angle.
+;
+
+   #
+   _item.name            "_pdbx_vrpt_instance_mogul_ring_outliers.local_density"
+   _item.category_id     pdbx_vrpt_instance_mogul_ring_outliers
+   _item.mandatory_code  no
+   #
+   _item_type.code  float
+   #
+   _item_aliases.alias_name  "_mog-ring-outlier.local_density"
+   _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
+   _item_aliases.version     V6.08
+   #
+   loop_
+   _item_range.minimum
+   _item_range.maximum
+       0.    0.  
+       0.  100.  
+     100.  100.  
    #
 save_
 #

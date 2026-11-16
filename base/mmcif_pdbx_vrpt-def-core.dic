@@ -5476,6 +5476,35 @@ save__pdbx_vrpt_instance_mogul_ring_outliers.instance_id
    _item_linked.parent_name  "_pdbx_vrpt_model_instance.id"
    #
 save_
+
+save__pdbx_vrpt_instance_mogul_ring_outliers.local_density
+   _item_description.description  
+;
+            The local density is the percentage of observed Mogul ring angles
+	    within certain units of the query torsion angle.
+;
+
+   #
+   _item.name            "_pdbx_vrpt_instance_mogul_ring_outliers.local_density"
+   _item.category_id     pdbx_vrpt_instance_mogul_ring_outliers
+   _item.mandatory_code  no
+   #
+   _item_type.code  float
+   #
+   _item_aliases.alias_name  "_mog-ring-outlier.local_density"
+   _item_aliases.dictionary  http://wwpdb.org/validation/schema/wwpdb_validation_v6.00.xsd
+   _item_aliases.version     V6.08
+   #   
+loop_
+   _item_range.minimum
+   _item_range.maximum
+       0.    0.  
+       0.  100.  
+     100.  100.  
+   #
+save_
+
+
 #
 # save__pdbx_vrpt_instance_mogul_ring_outliers.label_alt_id
 #    _item_description.description  
